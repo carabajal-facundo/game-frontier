@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main{
+    flex-grow: 1;
+  }
+
+body{
+    display: flex;
+    font-family: 'Play', sans-serif;
+    background: rgb(130,20,28);
+background: linear-gradient(180deg, rgba(130,20,28,1) 0%, rgba(118,20,28,1) 0%, rgba(17,17,17,1) 100%);
+}
+
+nav{   
+background: rgb(88,14,19);
+background: radial-gradient(circle, rgba(88,14,19,1) 0%, rgba(88,13,20,1) 0%, rgba(17,17,17,1) 100%);
+font-size: 1.3rem;
+
+}
+nav img{
+    height: 8rem;
+
+}
+/* nav .container-fluid{
+    padding: 0rem 10rem;
+} */
