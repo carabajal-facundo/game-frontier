@@ -1,0 +1,36 @@
+/* inicio css index */
+
+.text-titulo-juego{
+    color: #ff4d4dce;
+    transition: color 300ms;
+}
+
+.text-titulo-juego:hover{
+    color: #fff;
+}
+
+body{
+    background: #1a1616;
+}
+
+.img-portada{
+    width: 261px;
+    height: 406px;
+    border-radius: 15px;
+}
+
+/* fin css index */
+
+@media all and (min-width:768px) {
+    .img-portada{
+        width: 156px;
+        height: 234px;
+    }
+}
+
+@media all and (min-width:992px){
+    .img-portada{
+        width: 261px;
+        height: 406px;
+    }
+}
