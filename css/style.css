@@ -92,6 +92,9 @@ nav .nav-item, #logout-button {
     height: 234px;
   }
 
+
+}
+@media screen and (max-width: 991px) {
   nav .nav-item, #logout-button {
     border: 2px solid rgb(0, 0, 0);
     transform: none;
@@ -100,9 +103,8 @@ nav .nav-item, #logout-button {
     background-color: #380505;
     float: none;    
     box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 1);
-    text-transform: uppercase;
-  
-
+    text-transform: uppercase;  
+    text-align: center;
     font-weight: 400;
     transition: all 0.2s linear;
   }
