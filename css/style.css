@@ -1,10 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+/* inicio css index */
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.text-titulo-juego{
+    color: #ff4d4dce;
+    transition: color 300ms;
 }
+
+.text-titulo-juego:hover{
+    color: #fff;
+}
+.img-portada{
+    width: 261px;
+    height: 406px;
+    border-radius: 15px;
+}
+
+/* fin css index */
+
 main {
   flex-grow: 1;
 }
@@ -19,11 +31,12 @@ body {
     rgba(118, 20, 28, 1) 0%,
     rgba(17, 17, 17, 1) 100%
   );
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav {
-  /* background: rgb(88,14,19);
-background: radial-gradient(circle, rgba(88,14,19,1) 0%, rgba(88,13,20,1) 0%, rgba(17,17,17,1) 100%); */
+
   font-size: 1.3rem;
 }
 nav img {
@@ -66,7 +79,19 @@ nav .nav-item, #logout-button {
   color: white;
 }
 
+@media all and (min-width:992px){
+  .img-portada{
+      width: 261px;
+      height: 406px;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .img-portada{
+    width: 156px;
+    height: 234px;
+  }
+
   nav .nav-item, #logout-button {
     border: 2px solid rgb(0, 0, 0);
     transform: none;
@@ -77,9 +102,11 @@ nav .nav-item, #logout-button {
     box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 1);
     text-transform: uppercase;
   
+
     font-weight: 400;
     transition: all 0.2s linear;
   }
+
   #logout-button{    
     margin-right: 0;
     border:none;
