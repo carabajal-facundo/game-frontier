@@ -19,7 +19,7 @@ Para ejecutar el proyecto en tu máquina local, necesitarás tener instalado un 
 En una terminal ejecuta el siguiente comando:
 
 ```
-https://github.com/carabajal-facundo/game-frontier.git
+git clone https://github.com/carabajal-facundo/game-frontier.git
 
 ```
 
