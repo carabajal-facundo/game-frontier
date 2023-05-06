@@ -21,9 +21,7 @@ body {
   );
 }
 
-nav {
-  /* background: rgb(88,14,19);
-background: radial-gradient(circle, rgba(88,14,19,1) 0%, rgba(88,13,20,1) 0%, rgba(17,17,17,1) 100%); */
+nav { 
   font-size: 1.3rem;
 }
 nav img {
