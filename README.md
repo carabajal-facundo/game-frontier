@@ -1,18 +1,12 @@
-# game-frontier
-Un proyecto de un ecommerce gamer como proyecto de fin de modulo para Rolling Code
-Nombre del proyecto: Game Frontier
+# Game Frontier
+## Nombre del proyecto: Game Frontier
 Este proyecto fue realizado como parte del módulo 2 del curso de desarrollo web de Rolling Code. El objetivo del proyecto era crear una aplicación web de comercio electrónico para la venta de videojuegos utilizando únicamente HTML, CSS y JavaScript.
 
 ## Funcionalidades
 - Registro de usuarios.
 - Inicio de sesión de usuarios.
 - Visualización de productos.
-- Agregar productos al carrito de compras.
-- Eliminar productos del carrito de compras.
-- Realizar pedidos.
-- Ver historial de pedidos.
 - Agregar, editar y eliminar productos (para usuarios con permisos de administrador).
-- Ver lista de usuarios y eliminar usuarios (para usuarios con permisos de administrador).
 ## Tecnologías / herramientas utilizadas 🛠
 - HTML
 - CSS
