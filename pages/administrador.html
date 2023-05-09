@@ -81,8 +81,125 @@
         </div>
       </nav>
     </header>
-    <main class="container text-light">      
-      
+    <main class="container text-light">
+      <section class="container">
+        <h1 class="text-center">Administrador de Juegos</h1>
+        <hr>
+        <p>Agregar Juego:
+          <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#adminModal">
+            <i class="bi bi-plus-square"></i>
+          </button>
+        </p>
+        <h2>Listado de Juegos</h2>
+        <hr>
+        <div class="table-responsive">
+          <table class="table text-white">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Requisitos del sistema</th>
+                <th scope="col">Desarrollador</th>
+                <th scope="col">Reseñas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Apex Legends</td>
+                <td>Gratis</td>
+                <td>Accion</td>
+                <td>url_img_apex_legends</td>
+                <td>una descripcion de apex legends</td>
+                <td>los requisitos son...</td>
+                <td>Respawn Entertainment</td>
+                <td>reseña: el juego es god</td>
+                <td>
+                  <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
+                    <i class="bi bi-pencil-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-danger">
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Apex Legends</td>
+                <td>Gratis</td>
+                <td>Accion</td>
+                <td>url_img_apex_legends</td>
+                <td>una descripcion de apex legends</td>
+                <td>los requisitos son...</td>
+                <td>Respawn Entertainment</td>
+                <td>reseña: el juego es god</td>
+                <td>
+                  <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
+                    <i class="bi bi-pencil-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-danger">
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Apex Legends</td>
+                <td>Gratis</td>
+                <td>Accion</td>
+                <td>url_img_apex_legends</td>
+                <td>una descripcion de apex legends</td>
+                <td>los requisitos son...</td>
+                <td>Respawn Entertainment</td>
+                <td>reseña: el juego es god</td>
+                <td>
+                  <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
+                    <i class="bi bi-pencil-fill"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-danger">
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- Inicio de ventana modal -->
+      <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="adminModalLabel">Administracion de Juego</h1>
+              <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" class="row container">
+                <label for="fTitulo">Titulo</label>
+                <input id="fTitulo" type="text">
+                <label for="fImagen">Imagen</label>
+                <input id="fImagen" type="text">
+                <label for="fPrecio">Precio</label>
+                <input id="fPrecio" type="number">
+                <label for="fCategoria">Categoria</label>
+                <input id="fCategoria" type="text">
+                <label for="fdescripcion">descripcion</label>
+                <input id="fdescripcion" type="text">
+                <label for="fRequisitos">Requisitos</label>
+                <input id="fRequisitos" type="text">
+                <label for="fDesarrollador">Desarrollador</label>
+                <input id="fDesarrollador" type="text">
+              </form>
+              <button type="button" class="btn btn-success mt-4">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fin de ventana Modal -->
     </main>
     <footer class="mt-5">
       <section class="bg-black pt-4">
