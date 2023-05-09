@@ -79,6 +79,10 @@ nav .nav-item, #logout-button {
   color: white;
 }
 
+.truncarTexto{
+  max-width: 150px;
+}
+
 @media all and (min-width:992px){
   .img-portada{
       width: 261px;
