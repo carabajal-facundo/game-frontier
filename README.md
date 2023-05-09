@@ -3,8 +3,6 @@
 Este proyecto fue realizado como parte del módulo 2 del curso de desarrollo web de Rolling Code. El objetivo del proyecto era crear una aplicación web de comercio electrónico para la venta de videojuegos utilizando únicamente HTML, CSS y JavaScript.
 
 ## Funcionalidades
-- Registro de usuarios.
-- Inicio de sesión de usuarios.
 - Visualización de productos.
 - Agregar, editar y eliminar productos (para usuarios con permisos de administrador).
 ## Tecnologías / herramientas utilizadas 🛠
@@ -31,11 +29,11 @@ Abre el archivo index.html en tu navegador web.
 Este proyecto fue creado por un equipo de estudiantes de Rolling Code como parte de su proyecto final de módulo. Actualmente, no se aceptan contribuciones externas.
 
 ## Autores
-1. [Facundo Carabajal]()
+1. [Facundo Carabajal](https://github.com/carabajal-facundo/)
 2. [David Copa]()
-3. [Sebastian Orosco]()
-4. [Diego Mercado]()
-5. [Nahuel Rodriguez]()
+3. [Sebastian Orosco](https://github.com/SebasAle95)
+4. [Diego Mercado](https://github.com/Diego2997)
+5. [Nahuel Rodriguez](https://github.com/NahuFed)
 
 ## Netlify
 
