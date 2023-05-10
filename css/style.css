@@ -78,6 +78,10 @@ nav .nav-item, #logout-button {
 #logout-button:hover{
   color: white;
 }
+
+.truncarTexto{
+  max-width: 150px;
+}
 .facundo{
   object-fit: cover;
 }
