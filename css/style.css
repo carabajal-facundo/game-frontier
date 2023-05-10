@@ -35,6 +35,11 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 nav {
 
   font-size: 1.3rem;
@@ -115,6 +120,48 @@ padding: 1em 0 1em 0;
 border-radius: 5%;
 }
 
+.img-nosotros{
+  border-radius: 50%;
+}
+
+@media all and (min-width:992px){
+  .img-portada{
+      width: 261px;
+      height: 406px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .img-portada{
+    width: 156px;
+    height: 234px;
+  }
+
+
+}
+@media screen and (max-width: 991px) {
+  nav .nav-item, #logout-button {
+    border: 2px solid rgb(0, 0, 0);
+    transform: none;
+    -webkit-transform: 0;
+    -moz-transform: 0;
+    background-color: #380505;
+    float: none;    
+    box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 1);
+    text-transform: uppercase;  
+    text-align: center;
+    font-weight: 400;
+    transition: all 0.2s linear;
+  }
+
+  #logout-button{    
+    margin-right: 0;
+    border:none;
+    box-shadow: none;
+  }
+}
+
+
 
 @media all and (min-width:992px){
   .img-portada{
@@ -160,8 +207,3 @@ border-radius: 5%;
     width: 45%;
   }
 }
-  
-
-
-
-
