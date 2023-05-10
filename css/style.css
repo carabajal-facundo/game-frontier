@@ -78,6 +78,9 @@ nav .nav-item, #logout-button {
 #logout-button:hover{
   color: white;
 }
+.facundo{
+  object-fit: cover;
+}
 
 @media all and (min-width:992px){
   .img-portada{
@@ -115,6 +118,14 @@ nav .nav-item, #logout-button {
     box-shadow: none;
   }
 }
+
+@media screen and (min-width: 1050px){
+  .img-nosotros{
+    width: 45%;
+  }
+}
+  
+
 
 
 .detallefondo {
