@@ -11,7 +11,8 @@ function validarCantidadCaracteres(texto, min, max){
 // https://pics.filmaffinity.com/vaya_vacaciones-957309987-large.jpg
 
 function validarURLImagenes(texto){
-   const patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|png|gif)$/
+   const patron = /^https?:\/\/(?:[a-z]+\.)+[a-z]{2,}(?:\/[\w-]+)*\/([\w.-]+\.(?:jpe?g|png|gif))(\?\S*)?$/
+
    console.log(typeof patron);
     if(patron.test(texto)){
         console.log('la expresion regular fue valida');

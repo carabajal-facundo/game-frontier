@@ -1,4 +1,4 @@
-export default class Pelicula {
+export default class Videojuego {
     #codigo;
     #nombre;
     #precio;

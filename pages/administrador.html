@@ -204,8 +204,21 @@
                 <label for="fPrecio">Precio</label>
                 <input id="fPrecio" type="number">
                 <label for="fCategoria">Categoria</label>
-                <input id="fCategoria" type="text">
-                <label for="fdescripcion">descripcion</label>
+                <select
+                class="form-select"
+                aria-label="Genero de pelicula"
+                id="fCategoria"
+              >
+                <option selected value="">Seleccione una opción</option>
+                <option value="Accion">Acción</option>
+                <option value="Aventura">Aventura</option>
+                <option value="Deporte">Deporte</option>
+                <option value="Estrategia">Estrategia</option>
+                <option value="FPS">FPS</option>
+                <option value="RPG">RPG</option>
+                <option value="Simulacion">Simulacion</option>
+              </select>
+                <label for="fdescripcion">Descripcion</label>
                 <input id="fdescripcion" type="text">
                 <label for="fRequisitos">Requisitos</label>
                 <input id="fRequisitos" type="text">
@@ -260,5 +273,6 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/administrador.js" type="module"></script>
   </body>
 </html>
