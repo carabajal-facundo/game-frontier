@@ -71,7 +71,8 @@ function crearVideojuego() {
   if (resumeErrores.length === 0) {
     //creo  el videojuego
     mostrarAlert(false, "");
-    let nuevoVideojuego = new Videojuego(      
+    let nuevoVideojuego = new Videojuego(  
+      undefined,    
       nombre.value,
       precio.value,
       categoria.value,      
