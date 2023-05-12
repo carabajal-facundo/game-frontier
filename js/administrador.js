@@ -121,33 +121,7 @@ function limpiarFormulario() {
 
 
 
-window.prepararVideojuego = (codigoBuscado)=>{
-  console.log(codigo,'desde preparar Videojuego');
-  //mostrar la ventana modal con los datos de la Videojuego
-  modalVideojuego.show();
-  //buscar la Videojuego y cargarla en el formulario
-  let VideojuegoBuscado = listaVideojuegos.find((Videojuego)=> Videojuego.codigo === codigoBuscado );
-  console.log(VideojuegoBuscado)
-  codigo.value = VideojuegoBuscado.codigo;
-  nombre.value = VideojuegoBuscado.nombre;
-  precio.value = VideojuegoBuscado.precio;
-  imagen.value = VideojuegoBuscado.imagen;
-  desarrollador.value = VideojuegoBuscado.desarrollador;
-  categoria.value = VideojuegoBuscado.categoria;
-  requisitos.value = VideojuegoBuscado.requisitos;
-  descripcion.value = VideojuegoBuscado.descripcion;
-  reseñas.value = VideojuegoBuscado.reseñas;
-  //cambio la variable para editar una peli en el submit
-  verificarCrearVideojuego = false;
+function guardarEnLocalstorage() {
+  localStorage.setItem("listaVideojuegos", JSON.stringify(listaVideojuegos));
 }
 
-
-
-function mostrarModalVideojuego(){
-  //limpiar el formulario
-  limpiarFormulario();
-  //mostrar modal
-  modalVideojuego.show();
-  //cambiar la variable booleana
- verificarCrearVideojuego = true;
-}
