@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +19,10 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <title>Game Frontier</title>
   </head>
@@ -51,31 +54,26 @@
               class="navbar-nav ms-auto mb-2 mb-lg-0 text-center text-md-start"
             >
               <li class="nav-item">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nosotros.html">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
                 <a
-                  class="nav-link"
-                  
-                  href="../index.html"
-                  >Inicio</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " 
-                
-                href="./nosotros.html"
-                  >Sobre nosotros</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" 
-                aria-current="page"
-                href="./administrador.html"
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./administrador.html"
                   >Administrador</a
                 >
               </li>
               <li class="nav-item ms-lg-4">
-                <button class="h-100 "id='logout-button'><span class="fs-6">Cerrar Sesion</span> &nbsp;<i class="bi bi-box-arrow-left fw-"></i></button>
+                <button class="h-100" id="logout-button">
+                  <span class="fs-6">Cerrar Sesion</span> &nbsp;<i
+                    class="bi bi-box-arrow-left fw-"
+                  ></i>
+                </button>
               </li>
-
             </ul>
           </div>
         </div>
@@ -84,14 +82,21 @@
     <main class="container text-light">
       <section class="container">
         <h1 class="text-center">Administrador de Juegos</h1>
-        <hr>
-        <p>Agregar Juego:
-          <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#adminModal">
+        <hr />
+        <p>
+          Agregar Juego:
+          <button
+            type="button"
+            class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#adminModal"
+            id="btnAgregarVideojuego"
+          >
             <i class="bi bi-plus-square"></i>
           </button>
         </p>
         <h2>Listado de Juegos</h2>
-        <hr>
+        <hr />
         <div class="table-responsive">
           <table class="table text-white">
             <thead>
@@ -107,117 +112,165 @@
                 <th scope="col">Reseñas</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Apex Legends</td>
-                <td>Gratis</td>
-                <td>Accion</td>
-                <td> <span class="d-inline-block text-truncate truncarTexto">
-                  url_img_apex_legends
-                </span></td>
-                <td><span class="d-inline-block text-truncate truncarTexto">
-                  Praeterea iter est quasdam res quas ex communi.
-                </span></td>
-                <td><span class="d-inline-block text-truncate truncarTexto">
-                  los requisitos son...
-                </span></td>
-                <td>Respawn Entertainment</td>
-                <td>reseña: el juego es god</td>
-                <td>
-                  <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
-                    <i class="bi bi-pencil-fill"></i>
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    <i class="bi bi-trash3"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Apex Legends</td>
-                <td>Gratis</td>
-                <td>Accion</td>
-                <td> <span class="d-inline-block text-truncate truncarTexto">
-                  url_img_apex_legends
-                </span></td>
-                <td><span class="d-inline-block text-truncate truncarTexto">
-                  Praeterea iter est quasdam res quas ex communi.
-                </span></td>
-                <td><span class="d-inline-block text-truncate truncarTexto">
-                  los requisitos son...
-                </span></td>
-                <td>Respawn Entertainment</td>
-                <td>reseña: el juego es god</td>
-                <td>
-                  <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
-                    <i class="bi bi-pencil-fill"></i>
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    <i class="bi bi-trash3"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Apex Legends</td>
-                <td>Gratis</td>
-                <td>Accion</td>
-                <td> <span class="d-inline-block text-truncate truncarTexto">
-                  url_img_apex_legends
-                </span></td>
-                <td><span class="d-inline-block text-truncate truncarTexto">
-                  Praeterea iter est quasdam res quas ex communi.
-                </span></td>
-                <td><span class="d-inline-block text-truncate truncarTexto">
-                  los requisitos son...
-                </span></td>
-                <td>Respawn Entertainment</td>
-                <td>reseña: el juego es god</td>
-                <td>
-                  <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
-                    <i class="bi bi-pencil-fill"></i>
-                  </button>
-                  <button type="button" class="btn btn-outline-danger">
-                    <i class="bi bi-trash3"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
-      </section>
-      <!-- Inicio de ventana modal -->
-      <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content bg-dark">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="adminModalLabel">Administracion de Juego</h1>
-              <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form action="" class="row container">
-                <label for="fTitulo">Titulo</label>
-                <input id="fTitulo" type="text">
-                <label for="fImagen">Imagen</label>
-                <input id="fImagen" type="text">
-                <label for="fPrecio">Precio</label>
-                <input id="fPrecio" type="number">
-                <label for="fCategoria">Categoria</label>
-                <input id="fCategoria" type="text">
-                <label for="fdescripcion">descripcion</label>
-                <input id="fdescripcion" type="text">
-                <label for="fRequisitos">Requisitos</label>
-                <input id="fRequisitos" type="text">
-                <label for="fDesarrollador">Desarrollador</label>
-                <input id="fDesarrollador" type="text">
-              </form>
-              <button type="button" class="btn btn-success mt-4">Guardar</button>
+
+        <!-- Inicio de ventana modal -->
+        <div
+          class="modal fade"
+          id="adminModal"
+          tabindex="-1"
+          aria-labelledby="adminModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="adminModalLabel">
+                  Administracion de Juego
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close bg-danger"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="formVideojuego">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label for="codigo">Codigo</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="codigo"
+                        id="codigo"
+                        disabled
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="nombre">Titulo</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Ej: God Of War"
+                        aria-label="nombre"
+                        id="nombre"
+                        maxlength="30"
+                        minlength="3"
+                        type="text"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="imagen">Imagen</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder=""
+                        aria-label="imagen"
+                        id="imagen"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="precio">Precio</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="$3000"
+                        aria-label="precio"
+                        id="precio"
+                        maxlength="300"
+                        minlength="3"
+                        type="number"
+                      />
+                    </div>
+                    <div class="col-12"></div>
+                    <div class="col-12">
+                      <label for="categoria" class="form-label"
+                        >Categoria</label
+                      >
+                      <select
+                        class="form-select"
+                        aria-label="Categoria de juego"
+                        id="categoria"
+                      >
+                        <option selected value="">Seleccione una opción</option>
+                        <option value="Accion">Acción</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Deporte">Deporte</option>
+                        <option value="Estrategia">Estrategia</option>
+                        <option value="FPS">FPS</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Simulacion">Simulacion</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="descripcion">Descripcion</label>
+                      <input
+                        id="descripcion"
+                        type="text"
+                        class="form-control"
+                        aria-label="descripcion"
+                        placeholder="El juego se trata de matar bichos"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="requisitos">Requisitos</label>
+                      <input
+                        id="requisitos"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Ej: I5, GTX 1060 6gb, 8gb ram, 80gb hdd"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="desarrollador">Desarrollador</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="desarrollador"
+                        placeholder="Ej: Bethesda"
+                        id="desarrollador"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="reseñas">Reseñas</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="reseñas"
+                        placeholder="Ej: El juego es muy bueno"
+                        id="reseñas"
+                      />
+                    </div>
+                    <div
+                      class="alert alert-danger d-none"
+                      role="alert"
+                      id="alertMsjError"
+                    ></div>
+                    <button type="submit" class="btn btn-success mt-4">
+                      Enviar
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- fin de ventana Modal -->
+
+        <!-- fin de ventana Modal -->
+      </section>
     </main>
     <footer class="mt-5">
       <section class="bg-black pt-4">
@@ -228,14 +281,18 @@
                 href="../index.html"
                 class="d-flex flex-row align-items-center justify-content-center text-decoration-none text-secondary"
               >
-                <img src="../img/logo-Game-Frontier-redondo-removebg-preview.png" alt="logo" width="50" class="me-1" />
+                <img
+                  src="../img/logo-Game-Frontier-redondo-removebg-preview.png"
+                  alt="logo"
+                  width="50"
+                  class="me-1"
+                />
                 <h3>Game Frontier</h3>
               </a>
             </aside>
             <aside
               class="col-md-4 text-center d-flex flex-row align-items-center justify-content-center mt-2 mt-md-none"
-            >
-            </aside>
+            ></aside>
             <aside
               class="col-md-4 text-center d-flex flex-row align-items-center justify-content-center mt-2 mt-md-none"
             >
@@ -248,7 +305,7 @@
             <aside
               class="d-flex flex-row justify-content-center mt-2 mt-md-none"
             >
-              <p class="mx-2"> &copy Todos los derechos reservados</p>
+              <p class="mx-2">&copy Todos los derechos reservados</p>
               <i class="bi bi-c-circle"></i>
             </aside>
           </article>
@@ -260,5 +317,8 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="../js/administrador.js" type="module"></script>
   </body>
 </html>
