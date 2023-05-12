@@ -13,7 +13,7 @@ let codigo = document.getElementById("codigo"),
   desarrollador = document.getElementById("desarrollador"),
   reseñas = document.getElementById("reseñas");
 
-let modalVideojuego = new bootstrap.Modal(document.getElementById('modalAdministrarVideojuego'));
+let modalVideojuego = new bootstrap.Modal(document.getElementById('adminModal'));
 let verificarCrearVideojuego = true; //  verificarCrearVideojuego = true entonces creo la Videojuego, cuando sea false tengo que editar la Videojuego
 const btnAgregarVideojuego = document.getElementById('btnAgregarVideojuego');
 
@@ -62,25 +62,28 @@ function cargaInicial() {
 
 function crearFila(Videojuego, indice) {
   let tablaVideojuego = document.querySelector("tbody");
-  tablaVideojuego.innerHTML += `<tr>
-  <th scope="row">${indice}</th>
+  tablaVideojuego.innerHTML += `              <tr>
+  <th scope="row">1</th>
   <td>${Videojuego.nombre}</td>
-  <td class="text-truncate ancho pe-5">
-    ${Videojuego.precio}
-  </td>
-  <td class="text-truncate ancho pe-5">
-    ${Videojuego.categoria}
-  </td>
-  <td>${Videojuego.imagen}</td>
+  <td>${Videojuego.precio}</td>
+  <td>${Videojuego.categoria}</td>
+  <td> <span class="d-inline-block text-truncate truncarTexto">
+  ${Videojuego.imagen}
+  </span></td>
+  <td><span class="d-inline-block text-truncate truncarTexto">
+  ${Videojuego.descripcion}
+  </span></td>
+  <td><span class="d-inline-block text-truncate truncarTexto">
+  ${Videojuego.requisitos}
+  </span></td>
+  <td>${Videojuego.desarrollador}</td>
+  <td>${Videojuego.reseña}</td>
   <td>
-    <button
-      type="button"
-      class="btn btn-warning mx-1"
-      onclick="prepararVideojuego('${Videojuego.codigo}')"
-    >
-      <i class="bi bi-pencil-square"></i></button
-    ><button type="button" class="btn btn-danger mx-1" onclick="borrarVideojuego('${Videojuego.codigo}')">
-      <i class="bi bi-x-square"></i>
+    <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
+      <i class="bi bi-pencil-fill"></i>
+    </button>
+    <button type="button" class="btn btn-outline-danger">
+      <i class="bi bi-trash3"></i>
     </button>
   </td>
 </tr>`;
@@ -106,9 +109,9 @@ function crearVideojuego() {
   );
 
   if (resumeErrores.length === 0) {
-    //creo la peli
+    //creo  el videojuego
     mostrarAlert(false, "");
-    let nuevaPeli = new Videojuego(
+    let nuevoVideojuego = new Videojuego(
       undefined,
       nombre.value,
       precio.value,
@@ -120,9 +123,9 @@ function crearVideojuego() {
       requisitos.value,
       reparto.value
     );
-    console.log(nuevaPeli);
-    //guardar la peli en el array
-    listaVideojuegos.push(nuevaPeli);
+    console.log(nuevoVideojuego);
+    //guardar el videojuego en el array
+    listaVideojuegos.push(nuevoVideojuego);
     console.log(listaVideojuegos);
     //guardar el array en localstorage
     guardarEnLocalstorage();
@@ -131,11 +134,11 @@ function crearVideojuego() {
     //mostrar un mensaje
     Swal.fire(
       "Videojuego creado",
-      "El Videojuego fue correctamente almacenada",
+      "El Videojuego fue correctamente almacenado",
       "success"
     );
     //dibuja la fila
-    crearFila(nuevaPeli, listaVideojuegos.length);
+    crearFila(nuevoVideojuego, listaVideojuegos.length);
   } else {
     //falla la validacion
     mostrarAlert(true, resumeErrores);
@@ -168,18 +171,17 @@ window.prepararVideojuego = (codigoBuscado)=>{
   //mostrar la ventana modal con los datos de la Videojuego
   modalVideojuego.show();
   //buscar la Videojuego y cargarla en el formulario
-  let VideojuegoBuscada = listaVideojuegos.find((Videojuego)=> Videojuego.codigo === codigoBuscado );
-  console.log(VideojuegoBuscada)
-  codigo.value = VideojuegoBuscada.codigo;
-  nombre.value = VideojuegoBuscada.nombre;
-  precio.value = VideojuegoBuscada.precio;
-  imagen.value = VideojuegoBuscada.imagen;
-  desarrollador.value = VideojuegoBuscada.desarrollador;
-  categoria.value = VideojuegoBuscada.categoria;
-  requisitos.value = VideojuegoBuscada.requisitos;
-  reparto.value = VideojuegoBuscada.reparto;
-  descripcion.value = VideojuegoBuscada.descripcion;
-  reseñas.value = VideojuegoBuscada.reseñas;
+  let VideojuegoBuscado = listaVideojuegos.find((Videojuego)=> Videojuego.codigo === codigoBuscado );
+  console.log(VideojuegoBuscado)
+  codigo.value = VideojuegoBuscado.codigo;
+  nombre.value = VideojuegoBuscado.nombre;
+  precio.value = VideojuegoBuscado.precio;
+  imagen.value = VideojuegoBuscado.imagen;
+  desarrollador.value = VideojuegoBuscado.desarrollador;
+  categoria.value = VideojuegoBuscado.categoria;
+  requisitos.value = VideojuegoBuscado.requisitos;
+  descripcion.value = VideojuegoBuscado.descripcion;
+  reseñas.value = VideojuegoBuscado.reseñas;
   //cambio la variable para editar una peli en el submit
   verificarCrearVideojuego = false;
 }
