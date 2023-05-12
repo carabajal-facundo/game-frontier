@@ -88,6 +88,8 @@
           <button
             type="button"
             class="btn btn-outline-light"
+            data-bs-toggle="modal"
+            data-bs-target="#adminModal"
             id="btnAgregarVideojuego"
           >
             <i class="bi bi-plus-square"></i>
@@ -149,13 +151,13 @@
                       />
                     </div>
                     <div class="col-12">
-                      <label for="titulo">Titulo</label>
+                      <label for="nombre">Titulo</label>
                       <input
                         type="text"
                         class="form-control"
                         placeholder="Ej: God Of War"
-                        aria-label="titulo"
-                        id="titulo"
+                        aria-label="nombre"
+                        id="nombre"
                         maxlength="30"
                         minlength="3"
                         type="text"
