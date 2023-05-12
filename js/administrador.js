@@ -47,7 +47,32 @@ console.log(listaVideojuegos);
 // manejadores de eventos
 formularioVideojuego.addEventListener("submit", prepararFormulario);
 
+// obtengo la etiqueta<tbody>
+let tBody = document.querySelector('tbody');
 
+for(let i = 0; i<listaVideojuegos.length; i++){
+  tBody.innerHTML+=`
+    <tr>
+      <th scope="row">${i+1}</th>
+      <td>${listaVideojuegos[i].nombre}</td>
+      <td>${listaVideojuegos[i].precio}</td>
+      <td>${listaVideojuegos[i].categoria}</td>
+      <td>${listaVideojuegos[i].imagen}</td>
+      <td>${listaVideojuegos[i].descripcion}</td>
+      <td>${listaVideojuegos[i].requisitos}</td>
+      <td>${listaVideojuegos[i].desarrollador}</td>
+      <td>${listaVideojuegos[i].reseñas}</td>
+      <td>
+        <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+        <button type="button" class="btn btn-outline-danger">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </td>
+    </tr>
+  `;
+}
 
 
 
