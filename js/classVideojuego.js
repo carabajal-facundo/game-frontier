@@ -10,7 +10,7 @@ export default class Videojuego {
     #reseñas;
    
   
-    constructor(codigo = uuidv4(), nombre, precio, categoria, imagen, descripcion, requisitos, desarrollador, reseñas) {
+    constructor(codigo=uuidv4(), nombre, precio, categoria, imagen, descripcion, requisitos, desarrollador, reseñas) {
       this.#codigo = codigo;
       this.#nombre = nombre;
       this.#precio = precio;
@@ -103,13 +103,13 @@ export default class Videojuego {
         return {
             codigo: this.codigo,
             nombre: this.nombre,
-            descripcion: this.descripcion,
             precio: this.precio,
+            imagen: this.imagen,
+            descripcion: this.descripcion,
             requisitos: this.requisitos,
             reseñas: this.reseñas,
             desarrollador: this.desarrollador,
-            categoria: this.categoria,
-            imagen: this.imagen
+            categoria: this.categoria
         }
     }
   }

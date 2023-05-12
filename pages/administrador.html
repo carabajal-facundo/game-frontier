@@ -110,126 +110,165 @@
                 <th scope="col">Reseñas</th>
               </tr>
             </thead>
-            <tbody>   
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
-      </section>
-      <!-- Inicio de ventana modal -->
-      <div
-        class="modal fade"
-        id="adminModal"
-        tabindex="-1"
-        aria-labelledby="adminModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content bg-dark">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="adminModalLabel">
-                Administracion de Juego
-              </h1>
-              <button
-                type="button"
-                class="btn-close bg-danger"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form action="" class="row container" id="formVideojuego">
-                <label for="codigo">Codigo</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="codigo"
-                  id="codigo"
-                  disabled
-                />
-                <label for="titulo">Titulo</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Ej: God Of War"
-                  aria-label="titulo"
-                  id="titulo"
-                  maxlength="30"
-                  minlength="3"
-                  type="text"
-                />
-                <label for="imagen">Imagen</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder=""
-                  aria-label="imagen"
-                  id="imagen"
-                  maxlength="300"
-                  minlength="3"
-                />
-                <label for="precio">Precio</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="$3000"
-                  aria-label="precio"
-                  id="precio"
-                  maxlength="300"
-                  minlength="3"
-                  type="number"
-                />
-                <label for="genero">Categoria</label>
-                <select
-                  class="form-select"
-                  aria-label="Categoria de juego"
-                  id="categoria"
-                >
-                  <option selected value="">Seleccione una opción</option>
-                  <option value="Accion">Acción</option>
-                  <option value="Aventura">Aventura</option>
-                  <option value="Deporte">Deporte</option>
-                  <option value="Estrategia">Estrategia</option>
-                  <option value="FPS">FPS</option>
-                  <option value="RPG">RPG</option>
-                  <option value="Simulacion">Simulacion</option>
-                </select>
-                <label for="fdescripcion">Descripcion</label>
-                <input id="fdescripcion" type="text" />
-                <label for="requisitos">Requisitos</label>
-                <input
-                  id="requisitos"
-                  type="text"
-                  class="form-control"
-                  aria-label="requisitos"
-                  placeholder="Ej: I5, GTX 1060 6gb, 8gb ram, 80gb hdd"
-                  minlength="5"
-                  maxlength="1000"
-                />
-                <label for="desarrollador">Desarrollador</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="desarrollador"
-                  placeholder="Ej: Bethesda"
-                  id="desarrollador"
-                />
-                <label for="reseñas">Reseñas</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="reseñas"
-                  placeholder="Ej: El juego es muy bueno"
-                  id="reseñas"
-                />
-              </form>
-              <button type="button" class="btn btn-success mt-4">
-                Guardar
-              </button>
+
+        <!-- Inicio de ventana modal -->
+        <div
+          class="modal fade"
+          id="adminModal"
+          tabindex="-1"
+          aria-labelledby="adminModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="adminModalLabel">
+                  Administracion de Juego
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close bg-danger"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="formVideojuego">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label for="codigo">Codigo</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="codigo"
+                        id="codigo"
+                        disabled
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="titulo">Titulo</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Ej: God Of War"
+                        aria-label="titulo"
+                        id="titulo"
+                        maxlength="30"
+                        minlength="3"
+                        type="text"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="imagen">Imagen</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder=""
+                        aria-label="imagen"
+                        id="imagen"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="precio">Precio</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="$3000"
+                        aria-label="precio"
+                        id="precio"
+                        maxlength="300"
+                        minlength="3"
+                        type="number"
+                      />
+                    </div>
+                    <div class="col-12"></div>
+                    <div class="col-12">
+                      <label for="categoria" class="form-label"
+                        >Categoria</label
+                      >
+                      <select
+                        class="form-select"
+                        aria-label="Categoria de juego"
+                        id="categoria"
+                      >
+                        <option selected value="">Seleccione una opción</option>
+                        <option value="Accion">Acción</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Deporte">Deporte</option>
+                        <option value="Estrategia">Estrategia</option>
+                        <option value="FPS">FPS</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Simulacion">Simulacion</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label for="descripcion">Descripcion</label>
+                      <input
+                        id="descripcion"
+                        type="text"
+                        class="form-control"
+                        aria-label="descripcion"
+                        placeholder="El juego se trata de matar bichos"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="requisitos">Requisitos</label>
+                      <input
+                        id="requisitos"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Ej: I5, GTX 1060 6gb, 8gb ram, 80gb hdd"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="desarrollador">Desarrollador</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="desarrollador"
+                        placeholder="Ej: Bethesda"
+                        id="desarrollador"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="reseñas">Reseñas</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="reseñas"
+                        placeholder="Ej: El juego es muy bueno"
+                        id="reseñas"
+                      />
+                    </div>
+                    <div
+                      class="alert alert-danger d-none"
+                      role="alert"
+                      id="alertMsjError"
+                    ></div>
+                    <button type="submit" class="btn btn-success mt-4">
+                      Enviar
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- fin de ventana Modal -->
+
+        <!-- fin de ventana Modal -->
+      </section>
     </main>
     <footer class="mt-5">
       <section class="bg-black pt-4">

@@ -27,18 +27,17 @@ if (!listaVideojuegos) {
   listaVideojuegos = [];
 } else {
   listaVideojuegos = JSON.parse(listaVideojuegos).map(
-    (Videojuego) =>
+    (videojuego) =>
       new Videojuego(
-        Videojuego.codigo,
-        Videojuego.nombre,
-        Videojuego.precio,
-        Videojuego.descripcion,
-        Videojuego.categoria,
-        Videojuego.imagen,
-        Videojuego.desarrollador,
-        Videojuego.reseñas,
-        Videojuego.requisitos,
-        Videojuego.reparto
+        videojuego.codigo,
+        videojuego.nombre,
+        videojuego.precio,
+        videojuego.categoria,
+        videojuego.imagen,
+        videojuego.descripcion,
+        videojuego.requisitos,
+        videojuego.desarrollador,
+        videojuego.reseñas
       )
   );
 }
@@ -63,7 +62,7 @@ function cargaInicial() {
 function crearFila(Videojuego, indice) {
   let tablaVideojuego = document.querySelector("tbody");
   tablaVideojuego.innerHTML += `              <tr>
-  <th scope="row">1</th>
+  <th scope="row">${indice}</th>
   <td>${Videojuego.nombre}</td>
   <td>${Videojuego.precio}</td>
   <td>${Videojuego.categoria}</td>
@@ -102,10 +101,9 @@ function crearVideojuego() {
   //validar el formulario
   let resumeErrores = sumarioValidaciones(
     nombre.value,
-    precio.value,
-    categoria.value,
-    desarrollador.value,
-    imagen.value
+    descripcion.value,
+    imagen.value,
+    categoria.value
   );
 
   if (resumeErrores.length === 0) {
@@ -115,13 +113,13 @@ function crearVideojuego() {
       undefined,
       nombre.value,
       precio.value,
-      descripcion.value,
       categoria.value,
       imagen.value,
+      imagen.value,
+      descripcion.value,
       desarrollador.value,
-      reseñas.value,
-      requisitos.value,
-      reparto.value
+      requisitos.value,      
+      reseñas.value      
     );
     console.log(nuevoVideojuego);
     //guardar el videojuego en el array

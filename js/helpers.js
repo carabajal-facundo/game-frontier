@@ -23,17 +23,8 @@ function validarURLImagenes(texto){
     }
 }
 
-function validacionAnio(anio){
-    // 1895 - (año actual + 1)
-    const fecha = (new Date().getFullYear()) + 1;
-    if(anio >= 1985 && anio <= fecha){
-        return true;
-    }else{
-        return false;
-    }
-}
-function validacionGenero(genero){
-    if(genero.length > 0 && genero === 'Accion' || genero === 'Comedia' || genero === 'Terror' || genero === 'Drama' || genero === 'Aventura'){
+function validacioncategoria(categoria){
+    if(categoria.length > 0 && categoria === 'Accion' || categoria === 'Aventura' || categoria === 'Deporte' || categoria === 'Estrategia' || categoria === 'FPS'|| categoria === 'RPG'|| categoria === 'Simulacion'){
         return true
     }else{
         return false
@@ -41,7 +32,7 @@ function validacionGenero(genero){
 }
 
 
-export function sumarioValidaciones(titulo, descripcion, imagen, anio, genero ){
+export function sumarioValidaciones(titulo, descripcion, imagen, categoria ){
     let resumen = '';
     //quiero preguntar si no cumple con la validacion
     if(!validarCantidadCaracteres(titulo,2,100)){
@@ -50,11 +41,9 @@ export function sumarioValidaciones(titulo, descripcion, imagen, anio, genero ){
     if(!validarURLImagenes(imagen)){
         resumen += 'Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>'
     }
-    if(!validacionAnio(anio)){
-        resumen += 'El año debe ser entre 1985 y '+ (new Date().getFullYear() + 1) +' <br>'
-    }
-    if(!validacionGenero(genero)){
-        resumen += 'Tiene que seleccionar un genero <br>'
+
+    if(!validacioncategoria(categoria)){
+        resumen += 'Tiene que seleccionar una categoria <br>'
     }
     
     return resumen;
