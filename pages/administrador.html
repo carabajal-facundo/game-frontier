@@ -102,14 +102,17 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
+                <th scope="col">Titulo</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Requisitos del sistema</th>
                 <th scope="col">Desarrollador</th>
-                <th scope="col">Reseñas</th>
+                <th scope="col">Distribuidor</th>
+                <th scope="col">Fecha de lanzamiento</th>
+                <th scope="col">Reseñas positivas</th>
+                <th scope="col">Reseñas Negativas</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -243,7 +246,7 @@
                     <div class="col-12">
                       <label for="precio">Precio</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         placeholder="$3000"
                         aria-label="precio"
@@ -392,8 +395,15 @@
                         type="text"
                         class="form-control"
                         aria-label="reseñas"
-                        placeholder="Ej: El juego es muy bueno"
-                        id="reseñas"
+                        placeholder="Numero de reseñas positivas"
+                        id="reseñasPositivas"
+                      />
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="reseñas"
+                        placeholder="Numero de reseñas negativas"
+                        id="reseñasNegativas"
                       />
                     </div>
                   </div>
