@@ -71,7 +71,10 @@ for(let i = 0; i<listaVideojuegos.length; i++){
       <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].descripcion}</span></td>
       <td><span class="d-inline-block truncarTexto">SO:${listaVideojuegos[i].requisitos.os} <br> Procesador: ${listaVideojuegos[i].requisitos.processor} <br> RAM: ${listaVideojuegos[i].requisitos.memory} <br> Grafica: ${listaVideojuegos[i].requisitos.graphics} <br> DirectX: ${listaVideojuegos[i].requisitos.directX} <br> Almacenamiento: ${listaVideojuegos[i].requisitos.storage} <br> Adicionales: ${listaVideojuegos[i].requisitos.additional} <br> </span></td>
       <td>${listaVideojuegos[i].desarrollador}</td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñas}</span></td>
+      <td>${listaVideojuegos[i].distribuidor}</td>
+      <td>${listaVideojuegos[i].fechaLanzamiento}</td>
+      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñasPositivas}</span></td>
+      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñasNegativas}</span></td>
       <td>
         <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
           <i class="bi bi-pencil-fill"></i>
