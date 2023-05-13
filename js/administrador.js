@@ -14,9 +14,8 @@ let codigo = document.getElementById("codigo"),
   reseñas = document.getElementById("reseñas");
 
 let modalVideojuego = new bootstrap.Modal(document.getElementById('adminModal'));
-let verificarCrearVideojuego = true; //  verificarCrearVideojuego = true entonces creo la Videojuego, cuando sea false tengo que editar la Videojuego
+let verificarCrearVideojuego = true; //  verificarCrearVideojuego = true entonces creo el Videojuego, cuando sea false tengo que editar el Videojuego
 const btnAgregarVideojuego = document.getElementById('btnAgregarVideojuego');
-
 //si quiero trabajar con una array de objetos normales
 // let listaVideojuegos =  JSON.parse(localStorage.getItem('listaVideojuegos')) || [];
 
@@ -29,7 +28,7 @@ if (!listaVideojuegos) {
   listaVideojuegos = JSON.parse(listaVideojuegos).map(
     (videojuego) =>
       new Videojuego(
-        videojuego.codigo,
+        undefined,
         videojuego.nombre,
         videojuego.precio,
         videojuego.categoria,
@@ -46,6 +45,7 @@ console.log(listaVideojuegos);
 
 // manejadores de eventos
 formularioVideojuego.addEventListener("submit", prepararFormulario);
+btnAgregarVideojuego.addEventListener("click",mostrarModalJuego)
 
 // obtengo la etiqueta<tbody>
 let tBody = document.querySelector('tbody');
@@ -63,7 +63,7 @@ for(let i = 0; i<listaVideojuegos.length; i++){
       <td>${listaVideojuegos[i].desarrollador}</td>
       <td>${listaVideojuegos[i].reseñas}</td>
       <td>
-        <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
+        <button type="button" class="btn btn-outline-warning mb-1" onclick="prepararJuegoEditar('${listaVideojuegos[i].codigo}')">
           <i class="bi bi-pencil-fill"></i>
         </button>
         <button type="button" class="btn btn-outline-danger">
@@ -79,8 +79,11 @@ for(let i = 0; i<listaVideojuegos.length; i++){
 
 function prepararFormulario(e) {
   e.preventDefault();
-
-  crearVideojuego();
+  if(verificarCrearVideojuego){
+    crearVideojuego();
+  }else{
+    editarVideoJuego()
+  }
 
 }
 
@@ -149,5 +152,20 @@ function limpiarFormulario() {
 
 function guardarEnLocalstorage() {
   localStorage.setItem("listaVideojuegos", JSON.stringify(listaVideojuegos));
+}
+
+window.prepararJuegoEditar =(codigoJuego) =>{
+  modalVideojuego.show()
+  let juegoBuscado = listaVideojuegos.find(juego => juego.codigo === codigoJuego)
+  codigo.value = juegoBuscado.codigo
+  nombre.value = juegoBuscado.nombre
+  precio.value = juegoBuscado.precio
+  categoria.value = juegoBuscado.categoria
+  imagen.value = juegoBuscado.imagen
+  descripcion.value =  juegoBuscado.descripcion
+  requisitos.value = juegoBuscado.requisitos
+  desarrollador.value = juegoBuscado.desarrollador
+  reseñas.value = juegoBuscado.reseñas
+  verificarCrearVideojuego = false
 }
 
