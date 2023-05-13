@@ -9,12 +9,17 @@ console.log(videojuegoBuscado.nombre)
 
 const contenedor = document.getElementById('contenedorDetalle');
 
-console.log(contenedor)
+
 
 // ${videojuegoBuscado.}
 
+
+ 
+
+// contenedorImagen.style.backgroundImage = `url(${videojuegoBuscado.imagen})`;
+
 contenedor.innerHTML = `
-<section class="detallefondo">
+<section id="detallefondo">
 <h1 class="title text-center py-4"> ${videojuegoBuscado.nombre}
 
   <article class="row w-100">
@@ -140,31 +145,31 @@ contenedor.innerHTML = `
     <tr>
         <h5>Minima</h5>
       <td class="text-secondary pe-auto">OS:</td>
-      <td class="text-secondary ">Windows 10 64-bits</td>
+      <td class="text-secondary ">${videojuegoBuscado.requisitos.os}</td>
     </tr>
     <tr>
       <td class="text-secondary pe-5">Processor:</td>
-      <td class="text-secondary">4 core / 8 threads | Intel Core i7-7700 | Ryzen 5 1400</td>
+      <td class="text-secondary">${videojuegoBuscado.requisitos.processor}</td>
     </tr>
     <tr>
       <td class="text-secondary ">Memory:</td>
-      <td class="text-secondary">8 GB RAM</td>
+      <td class="text-secondary">${videojuegoBuscado.requisitos.memory}</td>
     </tr>
     <tr>
       <td class="text-secondary ">Graphics:</td>
-      <td class="text-secondary">8 GB VRAM | GTX 1070 | RADEON RX 580</td>
+      <td class="text-secondary">${videojuegoBuscado.requisitos.graphics}</td>
     </tr>
     <tr>
       <td class="text-secondary ">DirecX:</td>
-      <td class="text-secondary">Version 12</td>
+      <td class="text-secondary">${videojuegoBuscado.requisitos.directX}</td>
     </tr>
     <tr>
       <td class="text-secondary ">Storage:</td>
-      <td class="text-secondary">155 GB Avallable space</td>
+      <td class="text-secondary">${videojuegoBuscado.requisitos.storage}</td>
     </tr>
     <tr>
       <td class="text-secondary ">Additional:</td>
-      <td class="text-secondary">Online Play.</td>
+      <td class="text-secondary">${videojuegoBuscado.requisitos.additional}</td>
     </tr>
   </tbody>
 </table>
@@ -227,3 +232,8 @@ contenedor.innerHTML = `
 </article>
 </section>
 `
+
+const contenedorImagen = document.getElementById('detallefondo')
+
+console.log(contenedorImagen)
+contenedorImagen.style.backgroundImage = `linear-gradient(0deg, #02192b 5%, transparent, #0c3f66),url(${videojuegoBuscado.imagen})`;

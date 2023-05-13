@@ -10,7 +10,7 @@ export default class Videojuego {
     #reseñas;
    
   
-    constructor(codigo=uuidv4(), nombre, precio, categoria, imagen, descripcion, requisitos, desarrollador, reseñas) {
+    constructor(codigo=uuidv4(), nombre, precio, categoria, imagen, descripcion, requisitos = {os: "", processor: "", memory: "", graphics: "", directX: "", storage: "", additional: ""}, desarrollador, reseñas) {
       this.#codigo = codigo;
       this.#nombre = nombre;
       this.#precio = precio;

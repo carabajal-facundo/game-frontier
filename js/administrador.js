@@ -9,13 +9,12 @@ let codigo = document.getElementById("codigo"),
   categoria = document.getElementById("categoria"),
   imagen = document.getElementById("imagen"),
   descripcion = document.getElementById("descripcion"),
-  requisitos = document.getElementById("requisitos"),
+  osform = document.getElementById("os"), processorform = document.getElementById("processor"), memoryform = document.getElementById("memory"),graphicsform = document.getElementById("graphics"),directXform = document.getElementById("directX"),storageform = document.getElementById("storage"),additionalform = document.getElementById("additional"),
   desarrollador = document.getElementById("desarrollador"),
   reseñas = document.getElementById("reseñas");
+  console.log(processorform.value)
 
-let modalVideojuego = new bootstrap.Modal(document.getElementById('adminModal'));
-let verificarCrearVideojuego = true; //  verificarCrearVideojuego = true entonces creo la Videojuego, cuando sea false tengo que editar la Videojuego
-const btnAgregarVideojuego = document.getElementById('btnAgregarVideojuego');
+
 
 //si quiero trabajar con una array de objetos normales
 // let listaVideojuegos =  JSON.parse(localStorage.getItem('listaVideojuegos')) || [];
@@ -85,6 +84,15 @@ function prepararFormulario(e) {
 }
 
 function crearVideojuego() {
+  let requisitos = {
+    os: osform.value,
+    processor: `${processorform.value}`,
+    memory: `${memoryform.value}`,
+    graphics: `${graphicsform.value}`,
+    directX: `12`,
+    storage: `${storageform.value}`,
+    additional: `${additionalform.value}`
+  };
   //validar el formulario
   let resumeErrores = sumarioValidaciones(
     nombre.value,
@@ -103,7 +111,7 @@ function crearVideojuego() {
       categoria.value,      
       imagen.value,
       descripcion.value,
-      requisitos.value,      
+      requisitos,      
       desarrollador.value,
       reseñas.value      
     );
