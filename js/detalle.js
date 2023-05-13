@@ -94,12 +94,15 @@ contenedor.innerHTML = `
 <hr/>
 
 <section class="row my-5 w-100">
-<div class = "col-12">
-${}
-</div>
+
 <article class="col-md-6 d-flex justify-content-center">
+
 <div class="card m-2 cb1">
+
   <div class="card-body">
+  <div class = "col-6 text-white " id="contenedorReseñas">
+
+</div>
     <h5 class="card-title text-white">Acerca Del juego</h5>
     <span class="text-white-50">${videojuegoBuscado.descripcion}</span>
   </div>
@@ -237,6 +240,20 @@ function imprimirGaleria(){
   }
   }
 }
+let contenedorReseñas = document.getElementById('contenedorReseñas')
+function imprimirReseñas(){
+  if ( parseInt(videojuegoBuscado.reseñas) >= 1 ){
+      contenedorReseñas.innerHTML= `
+      <i class="bi bi-hand-thumbs-up-fill text-success"></i><span class = 'text-success ms-2'>+${videojuegoBuscado.reseñas}</span> <p class ='d-inline-block ms-2'>Recomendado</p>`
+  }else if(parseInt(videojuegoBuscado.reseñas) < 0 ){
+    contenedorReseñas.innerHTML= `
+      <i class="bi bi-hand-thumbs-down-fill text-danger"></i><span class = 'text-danger ms-2'>${videojuegoBuscado.reseñas}</span> <p class ='d-inline-block ms-2'>No recomendado</p>`
+  }else{
+    contenedorReseñas.innerHTML = `
+    <i class="bi bi-emoji-neutral-fill text-warning"></i><span class = 'text-warning ms-2'>+${videojuegoBuscado.reseñas} </span> Reseñas mixtas <p></p>`
+  }
+}
+imprimirReseñas();
 imprimirGaleria();
 const contenedorImagen = document.getElementById('detallefondo')
 
