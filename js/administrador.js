@@ -56,11 +56,11 @@ for(let i = 0; i<listaVideojuegos.length; i++){
       <td>${listaVideojuegos[i].nombre}</td>
       <td>${listaVideojuegos[i].precio}</td>
       <td>${listaVideojuegos[i].categoria}</td>
-      <td>${listaVideojuegos[i].imagen}</td>
-      <td>${listaVideojuegos[i].descripcion}</td>
-      <td>${listaVideojuegos[i].requisitos}</td>
+      <td><span class="d-inline-block  truncarTexto">${listaVideojuegos[i].imagen}</span></td>
+      <td><span class="d-inline-block truncarTexto">  ${listaVideojuegos[i].descripcion} </span></td>
+      <td><span class="d-inline-block truncarTexto">SO:${listaVideojuegos[i].requisitos.os} <br> Procesador: ${listaVideojuegos[i].requisitos.processor} <br> RAM: ${listaVideojuegos[i].requisitos.memory} <br> Grafica: ${listaVideojuegos[i].requisitos.graphics} <br> DirectX: ${listaVideojuegos[i].requisitos.directX} <br> Almacenamiento: ${listaVideojuegos[i].requisitos.storage} <br> Adicionales: ${listaVideojuegos[i].requisitos.additional} <br> </span></td>
       <td>${listaVideojuegos[i].desarrollador}</td>
-      <td>${listaVideojuegos[i].reseñas}</td>
+      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñas}</span></td>
       <td>
         <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
           <i class="bi bi-pencil-fill"></i>
