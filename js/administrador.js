@@ -200,3 +200,9 @@ function editarVideoJuego() {
     limpiarFormulario()
     modalVideojuego.hide();
 }
+
+function mostrarModalJuego() {
+  limpiarFormulario()
+  modalVideojuego.show()
+  verificarCrearVideojuego = true;
+}
