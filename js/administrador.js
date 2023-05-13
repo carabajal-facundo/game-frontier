@@ -169,3 +169,34 @@ window.prepararJuegoEditar =(codigoJuego) =>{
   verificarCrearVideojuego = false
 }
 
+function editarVideoJuego() {
+  let encontrarVideoJuego = listaVideojuegos.findIndex(juego => juego.codigo === codigo.value)
+  console.log(encontrarVideoJuego)
+  listaVideojuegos[encontrarVideoJuego].codigo = codigo.value
+  listaVideojuegos[encontrarVideoJuego].nombre = nombre.value
+  listaVideojuegos[encontrarVideoJuego].precio = precio.value
+  listaVideojuegos[encontrarVideoJuego].categoria = categoria.value
+  listaVideojuegos[encontrarVideoJuego].imagen = imagen.value
+  listaVideojuegos[encontrarVideoJuego].descripcion = descripcion.value
+  listaVideojuegos[encontrarVideoJuego].requisitos = requisitos.value
+  listaVideojuegos[encontrarVideoJuego].desarrollador = desarrollador.value
+  listaVideojuegos[encontrarVideoJuego].reseñas = reseñas.value
+
+  guardarEnLocalstorage()
+  let tBody = document.querySelector('tbody');
+  tBody.children[encontrarVideoJuego].children[1].innerHTML = nombre.value
+  tBody.children[encontrarVideoJuego].children[2].innerHTML = precio.value
+  tBody.children[encontrarVideoJuego].children[3].innerHTML = categoria.value
+  tBody.children[encontrarVideoJuego].children[4].innerHTML = imagen.value
+  tBody.children[encontrarVideoJuego].children[5].innerHTML = descripcion.value
+  tBody.children[encontrarVideoJuego].children[6].innerHTML = requisitos.value
+  tBody.children[encontrarVideoJuego].children[7].innerHTML = desarrollador.value
+  tBody.children[encontrarVideoJuego].children[8].innerHTML = reseñas.value
+  Swal.fire(
+    'VideoJuego editado',
+    'El VideoJuego fue modificado correctamente',
+    'success'
+    )
+    limpiarFormulario()
+    modalVideojuego.hide();
+}
