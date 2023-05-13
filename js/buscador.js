@@ -2,6 +2,7 @@ const formulario = document.querySelector('#formulario');
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+    
     let input = document.getElementById("seccionJuegos");
     let elementosjuegos = input.childNodes
     let inputbuscador = document.getElementById('buscador');
