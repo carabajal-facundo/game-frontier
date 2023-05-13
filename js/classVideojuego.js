@@ -8,9 +8,10 @@ export default class Videojuego {
     #requisitos;
     #desarrollador;
     #reseñas;
-   
+    #distribuidor;
+    #fechaLanzamiento
   
-    constructor(codigo=uuidv4(), nombre, precio, categoria, imagen, descripcion, requisitos, desarrollador, reseñas) {
+    constructor(codigo=uuidv4(), nombre, precio, categoria, imagen = {portada: "",baner: "",galeria: [""]}, descripcion, requisitos = {os: "", processor: "", memory: "", graphics: "", directX: "", storage: "", additional: ""}, desarrollador, reseñas, distribuidor, fechaLanzamiento) {
       this.#codigo = codigo;
       this.#nombre = nombre;
       this.#precio = precio;
@@ -20,6 +21,8 @@ export default class Videojuego {
       this.#requisitos = requisitos;
       this.#desarrollador = desarrollador;
       this.#reseñas = reseñas;
+      this.#distribuidor = distribuidor;
+      this.#fechaLanzamiento = fechaLanzamiento;
     }
   
     // Getters
@@ -57,6 +60,12 @@ export default class Videojuego {
   
     get reseñas() {
       return this.#reseñas;
+    }
+    get distribuidor() {
+      return this.#distribuidor;
+    }
+    get fechaLanzamiento() {
+      return this.#fechaLanzamiento;
     }
   
 
@@ -97,6 +106,12 @@ export default class Videojuego {
     set reseñas(reseñas) {
       this.#reseñas = reseñas;
     }
+    set distribuidor(distribuidor) {
+      this.#distribuidor = distribuidor;
+    }
+    set fechaLanzamiento(fechaLanzamiento) {
+      this.#fechaLanzamiento = fechaLanzamiento;
+    }
   
 
     toJSON(){
@@ -109,7 +124,10 @@ export default class Videojuego {
             requisitos: this.requisitos,
             reseñas: this.reseñas,
             desarrollador: this.desarrollador,
-            categoria: this.categoria
+            categoria: this.categoria,
+            distribuidor: this.#distribuidor,
+            fechaLanzamiento: this.fechaLanzamiento
+            
         }
     }
   }

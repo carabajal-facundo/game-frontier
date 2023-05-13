@@ -83,17 +83,20 @@ nav .nav-item, #logout-button {
 #logout-button:hover{
   color: white;
 }
-
+.portadaDetalles{
+  width: 20rem;
+}
 .truncarTexto{
   max-width: 150px;
+  max-height: 150px;
+  overflow-x: auto;
+  
 }
 .facundo{
   object-fit: cover;
 }
 
-.detallefondo {
-  background-image: linear-gradient(0deg, #02192b 5%, transparent, #0c3f66),
-    url(https://images6.alphacoders.com/100/1007429.jpg);
+#detallefondo {    
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
@@ -123,7 +126,28 @@ border-radius: 5%;
 .img-nosotros{
   border-radius: 50%;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #a70616 #ffffff;
+  }
 
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #3b0808 ;   
+    
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #970110;
+    border-radius: 5px;
+    border: 3px solid #c70b0b;
+  }
 @media all and (min-width:992px){
   .img-portada{
       width: 261px;
