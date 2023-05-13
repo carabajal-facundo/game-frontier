@@ -94,6 +94,9 @@ contenedor.innerHTML = `
 <hr/>
 
 <section class="row my-5 w-100">
+<div class = "col-12">
+${}
+</div>
 <article class="col-md-6 d-flex justify-content-center">
 <div class="card m-2 cb1">
   <div class="card-body">

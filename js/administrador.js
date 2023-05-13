@@ -19,7 +19,8 @@ let
   desarrollador = document.getElementById("desarrollador"),
   distribuidor = document.getElementById("distribuidor"),
   fechaLanzamiento = document.getElementById("fechaLanzamiento"),
-  reseñas = document.getElementById("reseñas");
+  reseñaspositivas = document.getElementById("reseñaspositivas"),
+  reseñasnegativas = document.getElementById("reseñasnegativas");
   console.log(processorform.value)
 
 
@@ -94,6 +95,7 @@ function prepararFormulario(e) {
 }
 
 function crearVideojuego() {
+  let reseñas = reseñaspositivas.value - reseñasnegativas.value
   let imagen = {
     portada: portadaform.value, 
     baner: banerform.value, 
@@ -129,7 +131,7 @@ function crearVideojuego() {
       descripcion.value,
       requisitos,      
       desarrollador.value,
-      reseñas.value,
+      reseñas,
       distribuidor.value,
       fechaLanzamiento.value      
     );
