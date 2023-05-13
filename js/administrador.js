@@ -97,12 +97,8 @@ function crearVideojuego() {
   let imagen = {
     portada: portadaform.value, 
     baner: banerform.value, 
-    galeria1: galeria1form.value,
-    galeria2: galeria2form.value,
-    galeria3: galeria3form.value,
-    galeria4: galeria4form.value,
-    galeria5: galeria5form.value,
-    galeria6: galeria6form.value
+    galeria:[galeria1form.value,galeria2form.value,galeria3form.value,galeria4form.value,galeria5form.value,galeria6form.value]
+
   };
   let requisitos = {
     os: osform.value,

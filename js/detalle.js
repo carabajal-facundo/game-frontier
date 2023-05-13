@@ -216,23 +216,25 @@ contenedor.innerHTML = `
 
 <section class="container py-5">
 <h2 class="card-title text-white pb-5">Galeria</h2>
-<article class="row">
-<aside class="col-lg-4 p-2">
-  <img src="${videojuegoBuscado.imagen.galeria1}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-  <img src="${videojuegoBuscado.imagen.galeria2}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-</aside>
-<aside class="col-lg-4 mb-3">
-  <img src="${videojuegoBuscado.imagen.galeria3}"img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-  <img src="${videojuegoBuscado.imagen.galeria4}"img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-</aside>
-<aside class="col-lg-4 mb-4">
-  <img src="${videojuegoBuscado.imagen.galeria5}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-  <img src="${videojuegoBuscado.imagen.galeria6}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-</aside>
+<article class="row" id='galeria'>
+
 </article>
 </section>
 `
-
+let contenedorGaleria = document.getElementById('galeria')
+function imprimirGaleria(){
+  let arrayGaleria = videojuegoBuscado.imagen.galeria
+   for(imagen of arrayGaleria){
+    if(imagen !== ""){
+    contenedorGaleria.innerHTML += `    
+    <aside class="col-lg-4 p-2">
+    <img src="${imagen}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+    </aside>
+    `
+  }
+  }
+}
+imprimirGaleria();
 const contenedorImagen = document.getElementById('detallefondo')
 
 console.log(contenedorImagen)
