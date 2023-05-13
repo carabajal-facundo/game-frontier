@@ -228,7 +228,7 @@ function imprimirGaleria(){
     if(imagen !== ""){
     contenedorGaleria.innerHTML += `    
     <aside class="col-lg-4 p-2">
-    <img src="${imagen}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+    <img src="${imagen}" class="img-rounded p-2" alt="${videojuegoBuscado.nombre}" width="304" height="236">
     </aside>
     `
   }
