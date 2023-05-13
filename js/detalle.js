@@ -26,7 +26,7 @@ contenedor.innerHTML = `
     <aside class="col-md-6 d-flex justify-content-center">
       <div class="card m-2 cb1 text-center">
         <div>
-          <img src="${videojuegoBuscado.imagen}" alt="portada ${videojuegoBuscado.nombre}" width="100%">
+          <img class="portadaDetalles" src="${videojuegoBuscado.imagen.portada}" alt="portada ${videojuegoBuscado.nombre}" >
         </div>
       </div>
     </aside>
@@ -114,15 +114,15 @@ contenedor.innerHTML = `
         </tr>
         <tr>
           <td class="text-secondary">Desarrollador</td>
-          <td>Electronic Arts, Respawn</td>
+          <td>${videojuegoBuscado.desarrollador}</td>
         </tr>
         <tr>
           <td class="text-secondary">Distruibuidor</td>
-          <td>Electronic Arts</td>
+          <td>${videojuegoBuscado.distribuidor}</td>
         </tr>
         <tr>
           <td class="text-secondary">Fecha de Lanzamiento</td>
-          <td>28 de Abril 2023</td>
+          <td>${videojuegoBuscado.fechaLanzamiento}</td>
         </tr>
         <tr>
           <td class="text-secondary">Genero</td>
@@ -218,16 +218,16 @@ contenedor.innerHTML = `
 <h2 class="card-title text-white pb-5">Galeria</h2>
 <article class="row">
 <aside class="col-lg-4 p-2">
-  <img src="../img/imgjedi/2.jpeg" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-  <img src="../img/imgjedi/2.jpg" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+  <img src="${videojuegoBuscado.imagen.galeria1}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+  <img src="${videojuegoBuscado.imagen.galeria2}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
 </aside>
 <aside class="col-lg-4 mb-3">
-  <img src="../img/imgjedi/4.jpg" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-  <img src="../img/imgjedi/3.jpg" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+  <img src="${videojuegoBuscado.imagen.galeria3}"img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+  <img src="${videojuegoBuscado.imagen.galeria4}"img-rounded p-2" alt="Cinque Terre" width="304" height="236">
 </aside>
 <aside class="col-lg-4 mb-4">
-  <img src="../img/imgjedi/1.jpg" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
-  <img src="../img/imgjedi/5.jpg" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+  <img src="${videojuegoBuscado.imagen.galeria5}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
+  <img src="${videojuegoBuscado.imagen.galeria6}" class="img-rounded p-2" alt="Cinque Terre" width="304" height="236">
 </aside>
 </article>
 </section>
@@ -236,4 +236,4 @@ contenedor.innerHTML = `
 const contenedorImagen = document.getElementById('detallefondo')
 
 console.log(contenedorImagen)
-contenedorImagen.style.backgroundImage = `linear-gradient(0deg, #02192b 5%, transparent, #0c3f66),url(${videojuegoBuscado.imagen})`;
+contenedorImagen.style.backgroundImage = `linear-gradient(0deg, #02192b 5%, transparent, #0c3f66),url("${videojuegoBuscado.imagen.baner}")`;

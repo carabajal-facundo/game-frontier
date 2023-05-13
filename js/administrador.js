@@ -3,14 +3,22 @@ import { sumarioValidaciones } from "./helpers.js";
 
 //variables globales
 let formularioVideojuego = document.getElementById("formVideojuego");
-let codigo = document.getElementById("codigo"),
+let
   nombre = document.getElementById("nombre"),
   precio = document.getElementById("precio"),
   categoria = document.getElementById("categoria"),
-  imagen = document.getElementById("imagen"),
   descripcion = document.getElementById("descripcion"),
-  osform = document.getElementById("os"), processorform = document.getElementById("processor"), memoryform = document.getElementById("memory"),graphicsform = document.getElementById("graphics"),directXform = document.getElementById("directX"),storageform = document.getElementById("storage"),additionalform = document.getElementById("additional"),
+  osform = document.getElementById("os"), processorform = document.getElementById("processor"), memoryform = document.getElementById("memory"),graphicsform = document.getElementById("graphics"),directXform = document.getElementById("directx"),storageform = document.getElementById("storage"),additionalform = document.getElementById("additional"),
+  portadaform = document.getElementById("portada"), banerform=document.getElementById("baner"), 
+  galeria1form = document.getElementById("galeria1"),
+  galeria2form = document.getElementById("galeria2"),
+  galeria3form = document.getElementById("galeria3"),
+  galeria4form = document.getElementById("galeria4"),
+  galeria5form = document.getElementById("galeria5"),
+  galeria6form = document.getElementById("galeria6"),
   desarrollador = document.getElementById("desarrollador"),
+  distribuidor = document.getElementById("distribuidor"),
+  fechaLanzamiento = document.getElementById("fechaLanzamiento"),
   reseñas = document.getElementById("reseñas");
   console.log(processorform.value)
 
@@ -36,7 +44,9 @@ if (!listaVideojuegos) {
         videojuego.descripcion,
         videojuego.requisitos,
         videojuego.desarrollador,
-        videojuego.reseñas
+        videojuego.reseñas,
+        videojuego.distribuidor,
+        videojuego.fechaLanzamiento
       )
   );
 }
@@ -56,8 +66,8 @@ for(let i = 0; i<listaVideojuegos.length; i++){
       <td>${listaVideojuegos[i].nombre}</td>
       <td>${listaVideojuegos[i].precio}</td>
       <td>${listaVideojuegos[i].categoria}</td>
-      <td><span class="d-inline-block  truncarTexto">${listaVideojuegos[i].imagen}</span></td>
-      <td><span class="d-inline-block truncarTexto">  ${listaVideojuegos[i].descripcion} </span></td>
+      <td><span class="d-inline-block  truncarTexto">${listaVideojuegos[i].imagen.portada}</span></td>
+      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].descripcion}</span></td>
       <td><span class="d-inline-block truncarTexto">SO:${listaVideojuegos[i].requisitos.os} <br> Procesador: ${listaVideojuegos[i].requisitos.processor} <br> RAM: ${listaVideojuegos[i].requisitos.memory} <br> Grafica: ${listaVideojuegos[i].requisitos.graphics} <br> DirectX: ${listaVideojuegos[i].requisitos.directX} <br> Almacenamiento: ${listaVideojuegos[i].requisitos.storage} <br> Adicionales: ${listaVideojuegos[i].requisitos.additional} <br> </span></td>
       <td>${listaVideojuegos[i].desarrollador}</td>
       <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñas}</span></td>
@@ -84,12 +94,22 @@ function prepararFormulario(e) {
 }
 
 function crearVideojuego() {
+  let imagen = {
+    portada: portadaform.value, 
+    baner: banerform.value, 
+    galeria1: galeria1form.value,
+    galeria2: galeria2form.value,
+    galeria3: galeria3form.value,
+    galeria4: galeria4form.value,
+    galeria5: galeria5form.value,
+    galeria6: galeria6form.value
+  };
   let requisitos = {
     os: osform.value,
     processor: `${processorform.value}`,
     memory: `${memoryform.value}`,
     graphics: `${graphicsform.value}`,
-    directX: `12`,
+    directX: directXform.value,
     storage: `${storageform.value}`,
     additional: `${additionalform.value}`
   };
@@ -97,7 +117,7 @@ function crearVideojuego() {
   let resumeErrores = sumarioValidaciones(
     nombre.value,
     descripcion.value,
-    imagen.value,
+    portadaform.value,
     categoria.value
   );
 
@@ -109,11 +129,13 @@ function crearVideojuego() {
       nombre.value,
       precio.value,
       categoria.value,      
-      imagen.value,
+      imagen,
       descripcion.value,
       requisitos,      
       desarrollador.value,
-      reseñas.value      
+      reseñas.value,
+      distribuidor.value,
+      fechaLanzamiento.value      
     );
     console.log(nuevoVideojuego);
     //guardar el videojuego en el array

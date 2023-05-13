@@ -83,7 +83,9 @@ nav .nav-item, #logout-button {
 #logout-button:hover{
   color: white;
 }
-
+.portadaDetalles{
+  width: 20rem;
+}
 .truncarTexto{
   max-width: 150px;
   max-height: 150px;
