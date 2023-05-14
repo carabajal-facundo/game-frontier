@@ -70,14 +70,18 @@ btnAgregarVideojuego.addEventListener("click", mostrarModalJuego);
 // obtengo la etiqueta<tbody>
 let tBody = document.querySelector("tbody");
 
+function mostrartabla(){
 for (let i = 0; i < listaVideojuegos.length; i++) {
   insertarFila(listaVideojuegos[i], i + 1);
 }
+}
+
+mostrartabla()
 
 function insertarFila(juego, indice) {
   tBody.innerHTML += `
     <tr>
-      <th scope="row">${indice}</th>
+      <th scope="row" class="indice">${indice}</th>
       <td>${juego.nombre}</td>
       <td>${juego.precio}</td>
       <td>${juego.categoria}</td>
@@ -227,6 +231,8 @@ window.eliminarjuego = (codigo) => {
         tablavideojuego.removeChild(tablavideojuego.children[posicionjuego]);
         //todo agregar una funcion que actualice el primer td de cada fila con la cantidad de elementos del array
         Swal.fire("Juego eliminado", "El juego seleccionado fue eliminado correctamente", "success");
+        tBody.innerHTML=""
+        mostrartabla();
       }
     });
   };
