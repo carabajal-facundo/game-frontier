@@ -285,12 +285,14 @@ function editarVideoJuego() {
   tBody.children[encontrarVideoJuego].children[1].innerHTML = nombre.value;
   tBody.children[encontrarVideoJuego].children[2].innerHTML = precio.value;
   tBody.children[encontrarVideoJuego].children[3].innerHTML = categoria.value;
-  tBody.children[encontrarVideoJuego].children[4].innerHTML = imagen;
-  tBody.children[encontrarVideoJuego].children[5].innerHTML = descripcion.value;
-  tBody.children[encontrarVideoJuego].children[6].innerHTML = requisitos;
-  tBody.children[encontrarVideoJuego].children[7].innerHTML =
-    desarrollador.value;
-  tBody.children[encontrarVideoJuego].children[8].innerHTML = reseñas;
+  tBody.children[encontrarVideoJuego].children[4].children[0].innerHTML = portadaform.value;
+  tBody.children[encontrarVideoJuego].children[5].children[0].innerHTML = descripcion.value;
+  tBody.children[encontrarVideoJuego].children[6].children[0].innerHTML = `SO:${requisitos.os} <br> Procesador: ${requisitos.processor} <br> RAM: ${requisitos.memory} <br> Grafica: ${requisitos.graphics} <br> DirectX: ${requisitos.directX} <br> Almacenamiento: ${requisitos.storage} <br> Adicionales: ${requisitos.additional} <br> `;
+  tBody.children[encontrarVideoJuego].children[7].innerHTML = desarrollador.value;
+  tBody.children[encontrarVideoJuego].children[8].innerHTML = distribuidor.value;
+  tBody.children[encontrarVideoJuego].children[9].innerHTML = fechaLanzamiento.value;
+  tBody.children[encontrarVideoJuego].children[10].innerHTML = reseñaspositivas.value;
+  tBody.children[encontrarVideoJuego].children[11].innerHTML = reseñasnegativas.value;
   Swal.fire(
     "VideoJuego editado",
     "El VideoJuego fue modificado correctamente",
