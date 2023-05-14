@@ -64,7 +64,7 @@ btnAgregarVideojuego.addEventListener("click",mostrarModalJuego)
 let tBody = document.querySelector('tbody');
 
 for(let i = 0; i<listaVideojuegos.length; i++){
-  let balanceReseñas = listaVideojuegos[i].reseñas.positivas -listaVideojuegos[i].reseñas.negativas;
+
   insertarFila(listaVideojuegos[i],i+1)
 }
 
@@ -81,10 +81,10 @@ function insertarFila(juego, indice){
       <td>${juego.desarrollador}</td>
       <td>${juego.distribuidor}</td>
       <td>${juego.fechaLanzamiento}</td>
-      <td><span class="d-inline-block truncarTexto">${juego.reseñasPositivas}</span></td>
-      <td><span class="d-inline-block truncarTexto">${juego.reseñasNegativas}</span></td>
+      <td><span class="d-inline-block truncarTexto">${juego.reseñas.positivas}</span></td>
+      <td><span class="d-inline-block truncarTexto">${juego.reseñas.negativas}</span></td>
       <td>
-        <button type="button" class="btn btn-outline-warning mb-1" onclick="prepararJuegoEditar('${listaVideojuegos[i].codigo}')">
+        <button type="button" class="btn btn-outline-warning mb-1" onclick="prepararJuegoEditar('${juego.codigo}')">
           <i class="bi bi-pencil-fill"></i>
         </button>
         <button type="button" class="btn btn-outline-danger">
@@ -201,6 +201,7 @@ window.prepararJuegoEditar =(codigoJuego) =>{
   modalVideojuego.show()
   
   let juegoBuscado = listaVideojuegos.find(juego => juego.codigo === codigoJuego)
+  console.log(juegoBuscado)
   codigo.value = juegoBuscado.codigo
   nombre.value = juegoBuscado.nombre
   precio.value = juegoBuscado.precio
