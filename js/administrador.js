@@ -161,7 +161,8 @@ function crearVideojuego() {
 }
 
 
-function mostrarAlert(estado, resumeErrores) {
+
+export function mostrarAlert(estado, resumeErrores) {
   //estado = true muestro el alert, caso contrario oculto
   let alerta = document.getElementById("alertMsjError");
   if (estado) {
