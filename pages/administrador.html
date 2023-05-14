@@ -111,8 +111,8 @@
                 <th scope="col">Desarrollador</th>
                 <th scope="col">Distribuidor</th>
                 <th scope="col">Fecha de lanzamiento</th>
-                <th scope="col">Reseñas positivas</th>
-                <th scope="col">Reseñas Negativas</th>
+                <th scope="col">Balance Reseñas</th>
+
               </tr>
             </thead>
             <tbody></tbody>
@@ -392,18 +392,21 @@
                     <div class="col-12">
                       <label for="reseñas">Reseñas</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         aria-label="reseñas"
                         placeholder="Numero de reseñas positivas"
                         id="reseñasPositivas"
+                        min="0"
                       />
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         aria-label="reseñas"
                         placeholder="Numero de reseñas negativas"
                         id="reseñasNegativas"
+                        min="0"
+
                       />
                     </div>
                   </div>

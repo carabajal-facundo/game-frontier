@@ -36,7 +36,7 @@ function crearArticleJuego(juego){
             <a href="./pages/detalle.html?codigo=${juego.codigo}" class="text-decoration-none">
                 <h3 class="mt-2 text-titulo-juego">${juego.nombre}</h3>
             </a>
-            <p class="text-white fs-5">${juego.precio}</p>
+            <p class="text-white fs-5">$${juego.precio}</p>
             <div class="btn btn-outline-primary" onclick="enviarCodigo('${juego.codigo}')">
                 Ver mas
             </div>

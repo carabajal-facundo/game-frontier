@@ -19,7 +19,8 @@ let
   desarrollador = document.getElementById("desarrollador"),
   distribuidor = document.getElementById("distribuidor"),
   fechaLanzamiento = document.getElementById("fechaLanzamiento"),
-  reseñas = document.getElementById("reseñas");
+  reseñaspositivas = document.getElementById("reseñasPositivas"),
+  reseñasnegativas = document.getElementById("reseñasNegativas");
   console.log(processorform.value)
 
 
@@ -72,8 +73,7 @@ for(let i = 0; i<listaVideojuegos.length; i++){
       <td>${listaVideojuegos[i].desarrollador}</td>
       <td>${listaVideojuegos[i].distribuidor}</td>
       <td>${listaVideojuegos[i].fechaLanzamiento}</td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñasPositivas}</span></td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñasNegativas}</span></td>
+      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñas}</span></td>      
       <td>
         <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
           <i class="bi bi-pencil-fill"></i>
@@ -97,6 +97,8 @@ function prepararFormulario(e) {
 }
 
 function crearVideojuego() {
+  let reseñas = reseñaspositivas.value - reseñasnegativas.value
+  console.log(reseñas)
   let imagen = {
     portada: portadaform.value, 
     baner: banerform.value, 
@@ -132,7 +134,7 @@ function crearVideojuego() {
       descripcion.value,
       requisitos,      
       desarrollador.value,
-      reseñas.value,
+      reseñas,
       distribuidor.value,
       fechaLanzamiento.value      
     );
