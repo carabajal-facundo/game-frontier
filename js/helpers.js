@@ -11,7 +11,7 @@ function validarCantidadCaracteres(texto, min, max){
 // https://pics.filmaffinity.com/vaya_vacaciones-957309987-large.jpg
 
 function validarURLImagenes(texto){
-   const patron = /^https?:\/\/(?:[a-z]+\.)+[a-z]{2,}(?:\/[\w-]+)*\/([\w.-]+\.(?:jpe?g|png|gif))(\?\S*)?$/
+   const patron = /\.(jpe?g|png|gif)$/i
 
    console.log(typeof patron);
     if(patron.test(texto)){
