@@ -64,6 +64,7 @@ btnAgregarVideojuego.addEventListener("click",mostrarModalJuego)
 let tBody = document.querySelector('tbody');
 
 for(let i = 0; i<listaVideojuegos.length; i++){
+  let balanceReseñas = listaVideojuegos[i].reseñas.positivas -listaVideojuegos[i].reseñas.negativas;
   tBody.innerHTML+=`
     <tr>
       <th scope="row">${i+1}</th>
@@ -76,7 +77,7 @@ for(let i = 0; i<listaVideojuegos.length; i++){
       <td>${listaVideojuegos[i].desarrollador}</td>
       <td>${listaVideojuegos[i].distribuidor}</td>
       <td>${listaVideojuegos[i].fechaLanzamiento}</td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñas}</span></td>      
+      <td><span class="d-inline-block truncarTexto">${balanceReseñas}</span></td>      
       <td>
         <button type="button" class="btn btn-outline-warning mb-1" onclick="prepararJuegoEditar('${listaVideojuegos[i].codigo}')">
           <i class="bi bi-pencil-fill"></i>
@@ -103,7 +104,10 @@ function prepararFormulario(e) {
 }
 
 function crearVideojuego() {
-  let reseñas = reseñaspositivas.value - reseñasnegativas.value
+  let reseñas ={
+    positivas: reseñaspositivas.value,
+    negativas: reseñasnegativas.value
+  }
   console.log(reseñas)
   let imagen = {
     portada: portadaform.value, 
@@ -190,42 +194,81 @@ function guardarEnLocalstorage() {
 
 window.prepararJuegoEditar =(codigoJuego) =>{
   modalVideojuego.show()
+  
   let juegoBuscado = listaVideojuegos.find(juego => juego.codigo === codigoJuego)
   codigo.value = juegoBuscado.codigo
   nombre.value = juegoBuscado.nombre
   precio.value = juegoBuscado.precio
   categoria.value = juegoBuscado.categoria
-  imagen.value = juegoBuscado.imagen
+  portadaform.value = juegoBuscado.imagen.portada
+  banerform.value = juegoBuscado.imagen.baner
+  galeria1form.value = juegoBuscado.imagen.galeria[0]
+  console.log(juegoBuscado.imagen.galeria[0])
+  galeria2form.value = juegoBuscado.imagen.galeria[1]
+  galeria3form.value = juegoBuscado.imagen.galeria[2]
+  galeria4form.value = juegoBuscado.imagen.galeria[3]
+  galeria5form.value = juegoBuscado.imagen.galeria[4]
+  galeria6form.value = juegoBuscado.imagen.galeria[5]
   descripcion.value =  juegoBuscado.descripcion
-  requisitos.value = juegoBuscado.requisitos
+  osform.value = juegoBuscado.requisitos.os
+  processorform.value = juegoBuscado.requisitos.processor
+  memoryform.value = juegoBuscado.requisitos.memory
+  graphicsform.value = juegoBuscado.requisitos.graphics
+  directXform.value = juegoBuscado.requisitos.directX
+  storageform.value = juegoBuscado.requisitos.storage
+  additionalform.value = juegoBuscado.requisitos.additional
+  additionalform.value = juegoBuscado.requisitos.additional
   desarrollador.value = juegoBuscado.desarrollador
-  reseñas.value = juegoBuscado.reseñas
+  reseñaspositivas.value = juegoBuscado.reseñas.positivas
+  reseñasnegativas.value = juegoBuscado.reseñas.negativas
+  fechaLanzamiento.value = juegoBuscado.fechaLanzamiento
+  distribuidor.value = juegoBuscado.distribuidor
   verificarCrearVideojuego = false
 }
 
 function editarVideoJuego() {
+  let reseñas ={
+    positivas: reseñaspositivas.value,
+    negativas: reseñasnegativas.value
+  }
+  console.log(reseñas)
+  let imagen = {
+    portada: portadaform.value, 
+    baner: banerform.value, 
+    galeria:[galeria1form.value,galeria2form.value,galeria3form.value,galeria4form.value,galeria5form.value,galeria6form.value]
+
+  };
+  let requisitos = {
+    os: osform.value,
+    processor: `${processorform.value}`,
+    memory: `${memoryform.value}`,
+    graphics: `${graphicsform.value}`,
+    directX: directXform.value,
+    storage: `${storageform.value}`,
+    additional: `${additionalform.value}`
+  };
   let encontrarVideoJuego = listaVideojuegos.findIndex(juego => juego.codigo === codigo.value)
   console.log(encontrarVideoJuego)
   listaVideojuegos[encontrarVideoJuego].codigo = codigo.value
   listaVideojuegos[encontrarVideoJuego].nombre = nombre.value
   listaVideojuegos[encontrarVideoJuego].precio = precio.value
   listaVideojuegos[encontrarVideoJuego].categoria = categoria.value
-  listaVideojuegos[encontrarVideoJuego].imagen = imagen.value
+  listaVideojuegos[encontrarVideoJuego].imagen = imagen
   listaVideojuegos[encontrarVideoJuego].descripcion = descripcion.value
-  listaVideojuegos[encontrarVideoJuego].requisitos = requisitos.value
+  listaVideojuegos[encontrarVideoJuego].requisitos = requisitos
   listaVideojuegos[encontrarVideoJuego].desarrollador = desarrollador.value
-  listaVideojuegos[encontrarVideoJuego].reseñas = reseñas.value
+  listaVideojuegos[encontrarVideoJuego].reseñas = reseñas
 
   guardarEnLocalstorage()
   let tBody = document.querySelector('tbody');
   tBody.children[encontrarVideoJuego].children[1].innerHTML = nombre.value
   tBody.children[encontrarVideoJuego].children[2].innerHTML = precio.value
   tBody.children[encontrarVideoJuego].children[3].innerHTML = categoria.value
-  tBody.children[encontrarVideoJuego].children[4].innerHTML = imagen.value
+  tBody.children[encontrarVideoJuego].children[4].innerHTML = imagen
   tBody.children[encontrarVideoJuego].children[5].innerHTML = descripcion.value
-  tBody.children[encontrarVideoJuego].children[6].innerHTML = requisitos.value
+  tBody.children[encontrarVideoJuego].children[6].innerHTML = requisitos
   tBody.children[encontrarVideoJuego].children[7].innerHTML = desarrollador.value
-  tBody.children[encontrarVideoJuego].children[8].innerHTML = reseñas.value
+  tBody.children[encontrarVideoJuego].children[8].innerHTML = reseñas
   Swal.fire(
     'VideoJuego editado',
     'El VideoJuego fue modificado correctamente',
