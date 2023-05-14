@@ -30,13 +30,13 @@ function crearArticleJuego(juego){
     seccionJuegos.innerHTML+=`
         <article class="col-md-4 col-lg-3 mt-5">
             <a href="./pages/detalle.html?codigo=${juego.codigo}" class="container-img">
-                <img src="${juego.imagen}" alt="${juego.nombre}"
+                <img src="${juego.imagen.portada}" alt="${juego.nombre}"
                 class="img-portada img-fluid">
             </a>
             <a href="./pages/detalle.html?codigo=${juego.codigo}" class="text-decoration-none">
                 <h3 class="mt-2 text-titulo-juego">${juego.nombre}</h3>
             </a>
-            <p class="text-white fs-5">${juego.precio}</p>
+            <p class="text-white fs-5">$${juego.precio}</p>
             <div class="btn btn-outline-primary" onclick="enviarCodigo('${juego.codigo}')">
                 Ver mas
             </div>

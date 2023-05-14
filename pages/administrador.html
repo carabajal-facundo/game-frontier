@@ -102,14 +102,17 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
+                <th scope="col">Titulo</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Imagen</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Requisitos del sistema</th>
                 <th scope="col">Desarrollador</th>
-                <th scope="col">Reseñas</th>
+                <th scope="col">Distribuidor</th>
+                <th scope="col">Fecha de lanzamiento</th>
+                <th scope="col">Balance Reseñas</th>
+
               </tr>
             </thead>
             <tbody></tbody>
@@ -164,21 +167,86 @@
                       />
                     </div>
                     <div class="col-12">
-                      <label for="imagen">Imagen</label>
-                      <input
+                      <label for="imagen">Imagenes</label>
+                                            <input
                         type="text"
                         class="form-control"
-                        placeholder=""
-                        aria-label="imagen"
-                        id="imagen"
+                        placeholder="Imagen de portada"
+                        aria-label="portada"
+                        id="portada"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                                            <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Imagen de baner pagina detalle"
+                        aria-label="baner"
+                        id="baner"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                                            <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Imagen de galeria 1"
+                        aria-label="galeria1"
+                        id="galeria1"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                                            <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Imagen de galeria 2"
+                        aria-label="galeria2"
+                        id="galeria2"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                                            <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Imagen de galeria 3"
+                        aria-label="galeria3"
+                        id="galeria3"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                                            <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Imagen de galeria 4"
+                        aria-label="galeria4"
+                        id="galeria4"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                                            <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Imagen de galeria 5"
+                        aria-label="galeria5"
+                        id="galeria5"
+                        maxlength="300"
+                        minlength="3"
+                      />
+                                            <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Imagen de galeria 6"
+                        aria-label="galeria6"
+                        id="galeria6"
                         maxlength="300"
                         minlength="3"
                       />
                     </div>
+                      
+                    </div>
                     <div class="col-12">
                       <label for="precio">Precio</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         placeholder="$3000"
                         aria-label="precio"
@@ -221,17 +289,73 @@
                       />
                     </div>
                     <div class="col-12">
-                      <label for="requisitos">Requisitos</label>
+                      <label for="requisitos">Requisitos Minimos</label>
                       <input
-                        id="requisitos"
+                        id="os"
                         type="text"
                         class="form-control"
                         aria-label="requisitos"
-                        placeholder="Ej: I5, GTX 1060 6gb, 8gb ram, 80gb hdd"
+                        placeholder="OS:"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                      <input
+                        id="processor"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Processor:"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                      <input
+                        id="memory"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Memory"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                      <input
+                        id="graphics"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Graphics"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                    
+                      <input
+                        id="directx"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Directx"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                      <input
+                        id="storage"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Storage"
+                        minlength="5"
+                        maxlength="1000"
+                      />
+                      <input
+                        id="additional"
+                        type="text"
+                        class="form-control"
+                        aria-label="requisitos"
+                        placeholder="Additional"
                         minlength="5"
                         maxlength="1000"
                       />
                     </div>
+                    
 
                     <div class="col-12">
                       <label for="desarrollador">Desarrollador</label>
@@ -239,21 +363,53 @@
                         type="text"
                         class="form-control"
                         aria-label="desarrollador"
-                        placeholder="Ej: Bethesda"
+                        placeholder="Ej: Electronic Arts, Respawn"
                         id="desarrollador"
+                      />
+                    </div>
+
+                    <div class="col-12">
+                      <label for="distribuidor">Distribuidor</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        aria-label="distribuidor"
+                        placeholder="Ej: Electronic Arts"
+                        id="distribuidor"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="fechaLanzamiento">Fecha de lanzamiento</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        aria-label="fechaLanzamiento"
+                        placeholder="Ej: 16 de Mayo de 2023"
+                        id="fechaLanzamiento"
                       />
                     </div>
 
                     <div class="col-12">
                       <label for="reseñas">Reseñas</label>
                       <input
-                        type="text"
+                        type="number"
                         class="form-control"
                         aria-label="reseñas"
-                        placeholder="Ej: El juego es muy bueno"
-                        id="reseñas"
+                        placeholder="Numero de reseñas positivas"
+                        id="reseñasPositivas"
+                        min="0"
+                      />
+                      <input
+                        type="number"
+                        class="form-control"
+                        aria-label="reseñas"
+                        placeholder="Numero de reseñas negativas"
+                        id="reseñasNegativas"
+                        min="0"
+
                       />
                     </div>
+                  </div>
                     <div
                       class="alert alert-danger d-none"
                       role="alert"
