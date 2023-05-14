@@ -66,9 +66,10 @@ for(let i = 0; i<listaVideojuegos.length; i++){
         <button type="button" class="btn btn-outline-warning mb-1" data-bs-toggle="modal" data-bs-target="#adminModal">
           <i class="bi bi-pencil-fill"></i>
         </button>
-        <button type="button" class="btn btn-outline-danger">
-          <i class="bi bi-trash3"></i>
+        <button type="button" class="btn btn-outline-danger mb-1" onclick="eliminarjuego('${listaVideojuegos[i].codigo}')">
+        <i class="bi bi-trash3"></i>
         </button>
+        
       </td>
     </tr>
   `;
@@ -144,6 +145,39 @@ function mostrarAlert(estado, resumeErrores) {
 function limpiarFormulario() {
   formularioVideojuego.reset();
 }
+
+
+window.eliminarjuego = (codigo) => {
+    Swal.fire({
+      title: "¿Esta seguro de eliminar la juego?",
+      text: "No puedes revertir posteriormente este paso",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Borrar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        //aqui agrego mi codigo
+        //borrar del array un objeto
+        let posicionjuego = listaVideojuegos.findIndex(
+          (videojuego) => videojuego.codigo === codigo
+        );
+        listaVideojuegos.splice(posicionjuego, 1);
+        //actualizar el localstorage
+        guardarEnLocalstorage();
+
+        //borrar la fila de la tabla
+        let tablavideojuego = document.querySelector("tbody");
+        tablavideojuego.removeChild(tablavideojuego.children[posicionjuego]);
+        //todo agregar una funcion que actualice el primer td de cada fila con la cantidad de elementos del array
+        Swal.fire("Juego eliminado", "El juego seleccionado fue eliminado correctamente", "success");
+      }
+    });
+  };
+
 
 
 
