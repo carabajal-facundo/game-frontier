@@ -66,19 +66,24 @@ btnAgregarVideojuego.addEventListener("click",mostrarModalJuego)
 let tBody = document.querySelector('tbody');
 
 for(let i = 0; i<listaVideojuegos.length; i++){
+  insertarFila(listaVideojuegos[i],i+1)
+}
+
+function insertarFila(juego, indice){
   tBody.innerHTML+=`
     <tr>
-      <th scope="row">${i+1}</th>
-      <td>${listaVideojuegos[i].nombre}</td>
-      <td>${listaVideojuegos[i].precio}</td>
-      <td>${listaVideojuegos[i].categoria}</td>
-      <td><span class="d-inline-block  truncarTexto">${listaVideojuegos[i].imagen.portada}</span></td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].descripcion}</span></td>
-      <td><span class="d-inline-block truncarTexto">SO:${listaVideojuegos[i].requisitos.os} <br> Procesador: ${listaVideojuegos[i].requisitos.processor} <br> RAM: ${listaVideojuegos[i].requisitos.memory} <br> Grafica: ${listaVideojuegos[i].requisitos.graphics} <br> DirectX: ${listaVideojuegos[i].requisitos.directX} <br> Almacenamiento: ${listaVideojuegos[i].requisitos.storage} <br> Adicionales: ${listaVideojuegos[i].requisitos.additional} <br> </span></td>
-      <td>${listaVideojuegos[i].desarrollador}</td>
-      <td>${listaVideojuegos[i].distribuidor}</td>
-      <td>${listaVideojuegos[i].fechaLanzamiento}</td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñas}</span></td>      
+      <th scope="row">${indice}</th>
+      <td>${juego.nombre}</td>
+      <td>${juego.precio}</td>
+      <td>${juego.categoria}</td>
+      <td><span class="d-inline-block  truncarTexto">${juego.imagen.portada}</span></td>
+      <td><span class="d-inline-block truncarTexto">${juego.descripcion}</span></td>
+      <td><span class="d-inline-block truncarTexto">SO:${juego.requisitos.os} <br> Procesador: ${juego.requisitos.processor} <br> RAM: ${juego.requisitos.memory} <br> Grafica: ${juego.requisitos.graphics} <br> DirectX: ${juego.requisitos.directX} <br> Almacenamiento: ${juego.requisitos.storage} <br> Adicionales: ${juego.requisitos.additional} <br> </span></td>
+      <td>${juego.desarrollador}</td>
+      <td>${juego.distribuidor}</td>
+      <td>${juego.fechaLanzamiento}</td>
+      <td><span class="d-inline-block truncarTexto">${juego.reseñasPositivas}</span></td>
+      <td><span class="d-inline-block truncarTexto">${juego.reseñasNegativas}</span></td>
       <td>
         <button type="button" class="btn btn-outline-warning mb-1" onclick="prepararJuegoEditar('${listaVideojuegos[i].codigo}')">
           <i class="bi bi-pencil-fill"></i>
@@ -161,7 +166,7 @@ function crearVideojuego() {
       "success"
     );
     //dibuja la fila
-
+    insertarFila(nuevoVideojuego, listaVideojuegos.length);
   } else {
     //falla la validacion
     mostrarAlert(true, resumeErrores);
