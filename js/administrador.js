@@ -76,8 +76,7 @@ for(let i = 0; i<listaVideojuegos.length; i++){
       <td>${listaVideojuegos[i].desarrollador}</td>
       <td>${listaVideojuegos[i].distribuidor}</td>
       <td>${listaVideojuegos[i].fechaLanzamiento}</td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñasPositivas}</span></td>
-      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñasNegativas}</span></td>
+      <td><span class="d-inline-block truncarTexto">${listaVideojuegos[i].reseñas}</span></td>      
       <td>
         <button type="button" class="btn btn-outline-warning mb-1" onclick="prepararJuegoEditar('${listaVideojuegos[i].codigo}')">
           <i class="bi bi-pencil-fill"></i>
