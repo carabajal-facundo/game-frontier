@@ -3,13 +3,19 @@ import { sumarioValidaciones } from "./helpers.js";
 
 //variables globales
 let formularioVideojuego = document.getElementById("formVideojuego");
-let
-  nombre = document.getElementById("nombre"),
+let nombre = document.getElementById("nombre"),
   precio = document.getElementById("precio"),
   categoria = document.getElementById("categoria"),
   descripcion = document.getElementById("descripcion"),
-  osform = document.getElementById("os"), processorform = document.getElementById("processor"), memoryform = document.getElementById("memory"),graphicsform = document.getElementById("graphics"),directXform = document.getElementById("directx"),storageform = document.getElementById("storage"),additionalform = document.getElementById("additional"),
-  portadaform = document.getElementById("portada"), banerform=document.getElementById("baner"), 
+  osform = document.getElementById("os"),
+  processorform = document.getElementById("processor"),
+  memoryform = document.getElementById("memory"),
+  graphicsform = document.getElementById("graphics"),
+  directXform = document.getElementById("directx"),
+  storageform = document.getElementById("storage"),
+  additionalform = document.getElementById("additional"),
+  portadaform = document.getElementById("portada"),
+  banerform = document.getElementById("baner"),
   galeria1form = document.getElementById("galeria1"),
   galeria2form = document.getElementById("galeria2"),
   galeria3form = document.getElementById("galeria3"),
@@ -21,12 +27,13 @@ let
   fechaLanzamiento = document.getElementById("fechaLanzamiento"),
   reseñaspositivas = document.getElementById("reseñasPositivas"),
   reseñasnegativas = document.getElementById("reseñasNegativas");
-  console.log(processorform.value)
+console.log(processorform.value);
 
-
-let modalVideojuego = new bootstrap.Modal(document.getElementById('adminModal'));
+let modalVideojuego = new bootstrap.Modal(
+  document.getElementById("adminModal")
+);
 let verificarCrearVideojuego = true; //  verificarCrearVideojuego = true entonces creo el Videojuego, cuando sea false tengo que editar el Videojuego
-const btnAgregarVideojuego = document.getElementById('btnAgregarVideojuego');
+const btnAgregarVideojuego = document.getElementById("btnAgregarVideojuego");
 //si quiero trabajar con una array de objetos normales
 // let listaVideojuegos =  JSON.parse(localStorage.getItem('listaVideojuegos')) || [];
 
@@ -58,18 +65,17 @@ console.log(listaVideojuegos);
 
 // manejadores de eventos
 formularioVideojuego.addEventListener("submit", prepararFormulario);
-btnAgregarVideojuego.addEventListener("click",mostrarModalJuego)
+btnAgregarVideojuego.addEventListener("click", mostrarModalJuego);
 
 // obtengo la etiqueta<tbody>
-let tBody = document.querySelector('tbody');
+let tBody = document.querySelector("tbody");
 
-for(let i = 0; i<listaVideojuegos.length; i++){
-
-  insertarFila(listaVideojuegos[i],i+1)
+for (let i = 0; i < listaVideojuegos.length; i++) {
+  insertarFila(listaVideojuegos[i], i + 1);
 }
 
-function insertarFila(juego, indice){
-  tBody.innerHTML+=`
+function insertarFila(juego, indice) {
+  tBody.innerHTML += `
     <tr>
       <th scope="row">${indice}</th>
       <td>${juego.nombre}</td>
@@ -95,30 +101,32 @@ function insertarFila(juego, indice){
   `;
 }
 
-
-
-
 function prepararFormulario(e) {
   e.preventDefault();
-  if(verificarCrearVideojuego){
+  if (verificarCrearVideojuego) {
     crearVideojuego();
-  }else{
-    editarVideoJuego()
+  } else {
+    editarVideoJuego();
   }
-
 }
 
 function crearVideojuego() {
-  let reseñas ={
+  let reseñas = {
     positivas: reseñaspositivas.value,
-    negativas: reseñasnegativas.value
-  }
-  console.log(reseñas)
+    negativas: reseñasnegativas.value,
+  };
+  console.log(reseñas);
   let imagen = {
-    portada: portadaform.value, 
-    baner: banerform.value, 
-    galeria:[galeria1form.value,galeria2form.value,galeria3form.value,galeria4form.value,galeria5form.value,galeria6form.value]
-
+    portada: portadaform.value,
+    baner: banerform.value,
+    galeria: [
+      galeria1form.value,
+      galeria2form.value,
+      galeria3form.value,
+      galeria4form.value,
+      galeria5form.value,
+      galeria6form.value,
+    ],
   };
   let requisitos = {
     os: osform.value,
@@ -127,7 +135,7 @@ function crearVideojuego() {
     graphics: `${graphicsform.value}`,
     directX: directXform.value,
     storage: `${storageform.value}`,
-    additional: `${additionalform.value}`
+    additional: `${additionalform.value}`,
   };
   //validar el formulario
   let resumeErrores = sumarioValidaciones(
@@ -140,18 +148,18 @@ function crearVideojuego() {
   if (resumeErrores.length === 0) {
     //creo  el videojuego
     mostrarAlert(false, "");
-    let nuevoVideojuego = new Videojuego(  
-      undefined,    
+    let nuevoVideojuego = new Videojuego(
+      undefined,
       nombre.value,
       precio.value,
-      categoria.value,      
+      categoria.value,
       imagen,
       descripcion.value,
-      requisitos,      
+      requisitos,
       desarrollador.value,
       reseñas,
       distribuidor.value,
-      fechaLanzamiento.value      
+      fechaLanzamiento.value
     );
     console.log(nuevoVideojuego);
     //guardar el videojuego en el array
@@ -175,7 +183,6 @@ function crearVideojuego() {
   }
 }
 
-
 function mostrarAlert(estado, resumeErrores) {
   //estado = true muestro el alert, caso contrario oculto
   let alerta = document.getElementById("alertMsjError");
@@ -191,58 +198,64 @@ function limpiarFormulario() {
   formularioVideojuego.reset();
 }
 
-
-
 function guardarEnLocalstorage() {
   localStorage.setItem("listaVideojuegos", JSON.stringify(listaVideojuegos));
 }
 
-window.prepararJuegoEditar =(codigoJuego) =>{
-  modalVideojuego.show()
-  
-  let juegoBuscado = listaVideojuegos.find(juego => juego.codigo === codigoJuego)
-  console.log(juegoBuscado)
-  codigo.value = juegoBuscado.codigo
-  nombre.value = juegoBuscado.nombre
-  precio.value = juegoBuscado.precio
-  categoria.value = juegoBuscado.categoria
-  portadaform.value = juegoBuscado.imagen.portada
-  banerform.value = juegoBuscado.imagen.baner
-  galeria1form.value = juegoBuscado.imagen.galeria[0]
-  console.log(juegoBuscado.imagen.galeria[0])
-  galeria2form.value = juegoBuscado.imagen.galeria[1]
-  galeria3form.value = juegoBuscado.imagen.galeria[2]
-  galeria4form.value = juegoBuscado.imagen.galeria[3]
-  galeria5form.value = juegoBuscado.imagen.galeria[4]
-  galeria6form.value = juegoBuscado.imagen.galeria[5]
-  descripcion.value =  juegoBuscado.descripcion
-  osform.value = juegoBuscado.requisitos.os
-  processorform.value = juegoBuscado.requisitos.processor
-  memoryform.value = juegoBuscado.requisitos.memory
-  graphicsform.value = juegoBuscado.requisitos.graphics
-  directXform.value = juegoBuscado.requisitos.directX
-  storageform.value = juegoBuscado.requisitos.storage
-  additionalform.value = juegoBuscado.requisitos.additional
-  additionalform.value = juegoBuscado.requisitos.additional
-  desarrollador.value = juegoBuscado.desarrollador
-  reseñaspositivas.value = juegoBuscado.reseñas.positivas
-  reseñasnegativas.value = juegoBuscado.reseñas.negativas
-  fechaLanzamiento.value = juegoBuscado.fechaLanzamiento
-  distribuidor.value = juegoBuscado.distribuidor
-  verificarCrearVideojuego = false
-}
+window.prepararJuegoEditar = (codigoJuego) => {
+  modalVideojuego.show();
+
+  let juegoBuscado = listaVideojuegos.find(
+    (juego) => juego.codigo === codigoJuego
+  );
+  console.log(juegoBuscado);
+  codigo.value = juegoBuscado.codigo;
+  nombre.value = juegoBuscado.nombre;
+  precio.value = juegoBuscado.precio;
+  categoria.value = juegoBuscado.categoria;
+  portadaform.value = juegoBuscado.imagen.portada;
+  banerform.value = juegoBuscado.imagen.baner;
+  galeria1form.value = juegoBuscado.imagen.galeria[0];
+  console.log(juegoBuscado.imagen.galeria[0]);
+  galeria2form.value = juegoBuscado.imagen.galeria[1];
+  galeria3form.value = juegoBuscado.imagen.galeria[2];
+  galeria4form.value = juegoBuscado.imagen.galeria[3];
+  galeria5form.value = juegoBuscado.imagen.galeria[4];
+  galeria6form.value = juegoBuscado.imagen.galeria[5];
+  descripcion.value = juegoBuscado.descripcion;
+  osform.value = juegoBuscado.requisitos.os;
+  processorform.value = juegoBuscado.requisitos.processor;
+  memoryform.value = juegoBuscado.requisitos.memory;
+  graphicsform.value = juegoBuscado.requisitos.graphics;
+  directXform.value = juegoBuscado.requisitos.directX;
+  storageform.value = juegoBuscado.requisitos.storage;
+  additionalform.value = juegoBuscado.requisitos.additional;
+  additionalform.value = juegoBuscado.requisitos.additional;
+  desarrollador.value = juegoBuscado.desarrollador;
+  reseñaspositivas.value = juegoBuscado.reseñas.positivas;
+  reseñasnegativas.value = juegoBuscado.reseñas.negativas;
+  fechaLanzamiento.value = juegoBuscado.fechaLanzamiento;
+  distribuidor.value = juegoBuscado.distribuidor;
+  verificarCrearVideojuego = false;
+};
 
 function editarVideoJuego() {
-  let reseñas ={
+  let reseñas = {
     positivas: reseñaspositivas.value,
-    negativas: reseñasnegativas.value
-  }
-  console.log(reseñas)
+    negativas: reseñasnegativas.value,
+  };
+  console.log(reseñas);
   let imagen = {
-    portada: portadaform.value, 
-    baner: banerform.value, 
-    galeria:[galeria1form.value,galeria2form.value,galeria3form.value,galeria4form.value,galeria5form.value,galeria6form.value]
-
+    portada: portadaform.value,
+    baner: banerform.value,
+    galeria: [
+      galeria1form.value,
+      galeria2form.value,
+      galeria3form.value,
+      galeria4form.value,
+      galeria5form.value,
+      galeria6form.value,
+    ],
   };
   let requisitos = {
     os: osform.value,
@@ -251,41 +264,44 @@ function editarVideoJuego() {
     graphics: `${graphicsform.value}`,
     directX: directXform.value,
     storage: `${storageform.value}`,
-    additional: `${additionalform.value}`
+    additional: `${additionalform.value}`,
   };
-  let encontrarVideoJuego = listaVideojuegos.findIndex(juego => juego.codigo === codigo.value)
-  console.log(encontrarVideoJuego)
-  listaVideojuegos[encontrarVideoJuego].codigo = codigo.value
-  listaVideojuegos[encontrarVideoJuego].nombre = nombre.value
-  listaVideojuegos[encontrarVideoJuego].precio = precio.value
-  listaVideojuegos[encontrarVideoJuego].categoria = categoria.value
-  listaVideojuegos[encontrarVideoJuego].imagen = imagen
-  listaVideojuegos[encontrarVideoJuego].descripcion = descripcion.value
-  listaVideojuegos[encontrarVideoJuego].requisitos = requisitos
-  listaVideojuegos[encontrarVideoJuego].desarrollador = desarrollador.value
-  listaVideojuegos[encontrarVideoJuego].reseñas = reseñas
+  let encontrarVideoJuego = listaVideojuegos.findIndex(
+    (juego) => juego.codigo === codigo.value
+  );
+  console.log(encontrarVideoJuego);
+  listaVideojuegos[encontrarVideoJuego].codigo = codigo.value;
+  listaVideojuegos[encontrarVideoJuego].nombre = nombre.value;
+  listaVideojuegos[encontrarVideoJuego].precio = precio.value;
+  listaVideojuegos[encontrarVideoJuego].categoria = categoria.value;
+  listaVideojuegos[encontrarVideoJuego].imagen = imagen;
+  listaVideojuegos[encontrarVideoJuego].descripcion = descripcion.value;
+  listaVideojuegos[encontrarVideoJuego].requisitos = requisitos;
+  listaVideojuegos[encontrarVideoJuego].desarrollador = desarrollador.value;
+  listaVideojuegos[encontrarVideoJuego].reseñas = reseñas;
 
-  guardarEnLocalstorage()
-  let tBody = document.querySelector('tbody');
-  tBody.children[encontrarVideoJuego].children[1].innerHTML = nombre.value
-  tBody.children[encontrarVideoJuego].children[2].innerHTML = precio.value
-  tBody.children[encontrarVideoJuego].children[3].innerHTML = categoria.value
-  tBody.children[encontrarVideoJuego].children[4].innerHTML = imagen
-  tBody.children[encontrarVideoJuego].children[5].innerHTML = descripcion.value
-  tBody.children[encontrarVideoJuego].children[6].innerHTML = requisitos
-  tBody.children[encontrarVideoJuego].children[7].innerHTML = desarrollador.value
-  tBody.children[encontrarVideoJuego].children[8].innerHTML = reseñas
+  guardarEnLocalstorage();
+  let tBody = document.querySelector("tbody");
+  tBody.children[encontrarVideoJuego].children[1].innerHTML = nombre.value;
+  tBody.children[encontrarVideoJuego].children[2].innerHTML = precio.value;
+  tBody.children[encontrarVideoJuego].children[3].innerHTML = categoria.value;
+  tBody.children[encontrarVideoJuego].children[4].innerHTML = imagen;
+  tBody.children[encontrarVideoJuego].children[5].innerHTML = descripcion.value;
+  tBody.children[encontrarVideoJuego].children[6].innerHTML = requisitos;
+  tBody.children[encontrarVideoJuego].children[7].innerHTML =
+    desarrollador.value;
+  tBody.children[encontrarVideoJuego].children[8].innerHTML = reseñas;
   Swal.fire(
-    'VideoJuego editado',
-    'El VideoJuego fue modificado correctamente',
-    'success'
-    )
-    limpiarFormulario()
-    modalVideojuego.hide();
+    "VideoJuego editado",
+    "El VideoJuego fue modificado correctamente",
+    "success"
+  );
+  limpiarFormulario();
+  modalVideojuego.hide();
 }
 
 function mostrarModalJuego() {
-  limpiarFormulario()
-  modalVideojuego.show()
+  limpiarFormulario();
+  modalVideojuego.show();
   verificarCrearVideojuego = true;
 }
