@@ -93,8 +93,8 @@ function insertarFila(juego, indice) {
         <button type="button" class="btn btn-outline-warning mb-1" onclick="prepararJuegoEditar('${juego.codigo}')">
           <i class="bi bi-pencil-fill"></i>
         </button>
-        <button type="button" class="btn btn-outline-danger mb-1" onclick="eliminarjuego('${listaVideojuegos[i].codigo}')">
-        <i class="bi bi-trash3"></i>
+        <button type="button" class="btn btn-outline-danger" onclick="eliminarjuego('${juego.codigo}')">
+          <i class="bi bi-trash3"></i>
         </button>
         
       </td>
