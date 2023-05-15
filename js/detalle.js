@@ -136,7 +136,7 @@ contenedor.innerHTML = `
 <section class="container">
 <h2 class="card-title text-white pb-5">Configuracion</h2>
 <article class="row">
-<aside class="col-md-6">
+<aside class="col-md-6 pb-4">
 <table class="table-responsive">
   <tbody>
     <tr>
