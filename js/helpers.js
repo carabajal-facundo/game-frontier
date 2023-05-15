@@ -6,8 +6,6 @@ function validarCantidadCaracteres(texto, min, max) {
   }
 }
 
-
-
 function validarURLImagenes(texto) {
   const patron = /\.(jpe?g|png|gif)$/i;
 
@@ -16,6 +14,22 @@ function validarURLImagenes(texto) {
   } else {
     return false;
   }
+}
+
+function validarBaner(baner) {
+  return baner === "" || validarURLImagenes(baner);
+}
+
+function validarGaleria(arrayGaleria) {
+  let bandera = true;
+  for (let imagen of arrayGaleria) {
+    if (imagen === "" || validarURLImagenes(imagen)) {
+      bandera = true;
+    } else {
+      return false;
+    }
+  }
+  return bandera;
 }
 
 function validacioncategoria(categoria) {
@@ -33,16 +47,35 @@ function validacioncategoria(categoria) {
     return false;
   }
 }
+function validarPrecio(precio) {
+  if (precio !== "") {
+    return true;
+  }
+}
 
-export function sumarioValidaciones(titulo, descripcion, imagen, categoria) {
+export function sumarioValidaciones(
+  titulo,
+  imagenPortada,
+  baner,
+  galeria,
+  categoria
+) {
   let resumen = "";
   //quiero preguntar si no cumple con la validacion
   if (!validarCantidadCaracteres(titulo, 2, 100)) {
     resumen = "El titulo debe tener entre 2 y 100 caracteres <br>";
   }
-  if (!validarURLImagenes(imagen)) {
+  if (!validarURLImagenes(imagenPortada)) {
     resumen +=
-      "Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) <br>";
+      "Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif)  para la portada <br>";
+  }
+  if (!validarBaner(baner)) {
+    resumen +=
+      "Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif)  para el baner <br>";
+  }
+  if (!validarGaleria(galeria)) {
+    resumen +=
+      "Debe ingresar una url de imagen valida, con terminacion (.jpg, .png, .gif) para la imagen de galeria <br>";
   }
 
   if (!validacioncategoria(categoria)) {
