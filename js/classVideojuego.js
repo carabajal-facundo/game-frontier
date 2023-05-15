@@ -11,7 +11,7 @@ export default class Videojuego {
     #distribuidor;
     #fechaLanzamiento
   
-    constructor(codigo=uuidv4(), nombre, precio, categoria, imagen = {portada: "",baner: "",galeria: [""]}, descripcion, requisitos = {os: "", processor: "", memory: "", graphics: "", directX: "", storage: "", additional: ""}, desarrollador, reseñas, distribuidor, fechaLanzamiento) {
+    constructor(codigo=uuidv4(), nombre, precio, categoria, imagen = {portada: "",baner: "",galeria: [""]}, descripcion, requisitos = {os: "", processor: "", memory: "", graphics: "", directX: "", storage: "", additional: ""}, desarrollador, reseñas = {positivas, negativas}, distribuidor, fechaLanzamiento) {
       this.#codigo = codigo;
       this.#nombre = nombre;
       this.#precio = precio;

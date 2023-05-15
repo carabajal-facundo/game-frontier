@@ -242,15 +242,16 @@ function imprimirGaleria(){
 }
 let contenedorReseñas = document.getElementById('contenedorReseñas')
 function imprimirReseñas(){
-  if ( parseInt(videojuegoBuscado.reseñas) >= 1 ){
+  let balanceReseñas = videojuegoBuscado.reseñas.positivas - videojuegoBuscado.reseñas.negativas;
+  if ( balanceReseñas >= 1 ){
       contenedorReseñas.innerHTML= `
-      <i class="bi bi-hand-thumbs-up-fill text-success"></i><span class = 'text-success ms-2'>+${videojuegoBuscado.reseñas}</span> <p class ='d-inline-block ms-2'>Recomendado</p>`
-  }else if(parseInt(videojuegoBuscado.reseñas) < 0 ){
+      <i class="bi bi-hand-thumbs-up-fill text-success"></i><span class = 'text-success ms-2'>+${balanceReseñas}</span> <p class ='d-inline-block ms-2'>Recomendado</p>`
+  }else if(balanceReseñas < 0 ){
     contenedorReseñas.innerHTML= `
-      <i class="bi bi-hand-thumbs-down-fill text-danger"></i><span class = 'text-danger ms-2'>${videojuegoBuscado.reseñas}</span> <p class ='d-inline-block ms-2'>No recomendado</p>`
+      <i class="bi bi-hand-thumbs-down-fill text-danger"></i><span class = 'text-danger ms-2'>${balanceReseñas}</span> <p class ='d-inline-block ms-2'>No recomendado</p>`
   }else{
     contenedorReseñas.innerHTML = `
-    <i class="bi bi-emoji-neutral-fill text-warning"></i><span class = 'text-warning ms-2'>+${videojuegoBuscado.reseñas} </span> Reseñas mixtas <p></p>`
+    <i class="bi bi-emoji-neutral-fill text-warning"></i><span class = 'text-warning ms-2'>+${balanceReseñas} </span> Reseñas mixtas <p></p>`
   }
 }
 imprimirReseñas();
