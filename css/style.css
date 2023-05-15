@@ -59,7 +59,7 @@ nav img {
   top: 0;
 }
 
-nav .nav-item, #logout-button {
+nav .nav-item, #btnLogin {
   border: 2px solid rgb(0, 0, 0);
   transform: skew(-30deg);
   -webkit-transform: skew(-30deg);
@@ -73,14 +73,14 @@ nav .nav-item, #logout-button {
   font-weight: 400;
   transition: all 0.2s linear;
 }
-#logout-button{
+#btnLogin{
   text-transform: none;
   transform: none;
   color: rgb(185, 182, 182) ;
   
 }
 
-#logout-button:hover{
+#btnLogin:hover{
   color: white;
 }
 .portadaDetalles{
@@ -164,7 +164,7 @@ border-radius: 5%;
 
 }
 @media screen and (max-width: 991px) {
-  nav .nav-item, #logout-button {
+  nav .nav-item, #btnLogin {
     border: 2px solid rgb(0, 0, 0);
     transform: none;
     -webkit-transform: 0;
@@ -178,7 +178,7 @@ border-radius: 5%;
     transition: all 0.2s linear;
   }
 
-  #logout-button{    
+  #btnLogin{    
     margin-right: 0;
     border:none;
     box-shadow: none;
@@ -204,7 +204,7 @@ border-radius: 5%;
 }
 
 @media screen and (max-width: 991px) {
-  nav .nav-item, #logout-button {
+  nav .nav-item, #btnLogin {
     border: 2px solid rgb(0, 0, 0);
     transform: none;
     -webkit-transform: 0;
@@ -218,7 +218,7 @@ border-radius: 5%;
     transition: all 0.2s linear;
   }
 
-  #logout-button{    
+  #btnLogin{    
     margin-right: 0;
     border:none;
     box-shadow: none;
