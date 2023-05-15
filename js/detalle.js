@@ -6,13 +6,8 @@ const listaVideojuegos =
 const videojuegoBuscado = listaVideojuegos.find(
   (videojuego) => videojuego.codigo === parametroCodigo.get("codigo")
 );
-console.log(videojuegoBuscado.nombre);
 
 const contenedor = document.getElementById("contenedorDetalle");
-
-// ${videojuegoBuscado.}
-
-// contenedorImagen.style.backgroundImage = `url(${videojuegoBuscado.imagen})`;
 
 contenedor.innerHTML = `
 <section id="detallefondo">
@@ -80,7 +75,7 @@ contenedor.innerHTML = `
       </div>
       <div class="d-flex justify-content-center">
         <button class="btn btn-secondary col-md-3 m-2" type="button"><i class="bi bi-cart-check"></i></button>
-        <button class="btn btn-secondary col-md-6 m-2" type="button">Compra Ahora</button>
+        <a href = './error404.html' class="btn btn-secondary col-md-6 m-2" type="button">Compra Ahora</a>
         
       </div>  
     </aside>
@@ -255,5 +250,4 @@ imprimirReseñas();
 imprimirGaleria();
 const contenedorImagen = document.getElementById("detallefondo");
 
-console.log(contenedorImagen);
 contenedorImagen.style.backgroundImage = `linear-gradient(0deg, #02192b 5%, transparent, #0c3f66),url("${videojuegoBuscado.imagen.baner}")`;

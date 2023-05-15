@@ -21,8 +21,6 @@ if (!listaVideojuegos) {
   );
 }
 
-console.log(listaVideojuegos);
-
 listaVideojuegos.map((juego) => crearArticleJuego(juego));
 
 function crearArticleJuego(juego) {

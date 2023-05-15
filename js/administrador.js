@@ -27,17 +27,13 @@ let nombre = document.getElementById("nombre"),
   fechaLanzamiento = document.getElementById("fechaLanzamiento"),
   reseñaspositivas = document.getElementById("reseñasPositivas"),
   reseñasnegativas = document.getElementById("reseñasNegativas");
-console.log(processorform.value);
 
 let modalVideojuego = new bootstrap.Modal(
   document.getElementById("adminModal")
 );
 let verificarCrearVideojuego = true; //  verificarCrearVideojuego = true entonces creo el Videojuego, cuando sea false tengo que editar el Videojuego
 const btnAgregarVideojuego = document.getElementById("btnAgregarVideojuego");
-//si quiero trabajar con una array de objetos normales
-// let listaVideojuegos =  JSON.parse(localStorage.getItem('listaVideojuegos')) || [];
 
-//si quiero trabajar con un array de objetos de tipo Videojuego
 let listaVideojuegos = localStorage.getItem("listaVideojuegos");
 // si listaVideojuegos esta vacio
 if (!listaVideojuegos) {
@@ -60,8 +56,6 @@ if (!listaVideojuegos) {
       )
   );
 }
-
-console.log(listaVideojuegos);
 
 // manejadores de eventos
 formularioVideojuego.addEventListener("submit", prepararFormulario);
@@ -120,7 +114,7 @@ function crearVideojuego() {
     positivas: reseñaspositivas.value,
     negativas: reseñasnegativas.value,
   };
-  console.log(reseñas);
+
   let imagen = {
     portada: portadaform.value,
     baner: banerform.value,
@@ -166,10 +160,10 @@ function crearVideojuego() {
       distribuidor.value,
       fechaLanzamiento.value
     );
-    console.log(nuevoVideojuego);
+
     //guardar el videojuego en el array
     listaVideojuegos.push(nuevoVideojuego);
-    console.log(listaVideojuegos);
+
     //guardar el array en localstorage
     guardarEnLocalstorage();
     //limpiar el formulario
@@ -214,7 +208,6 @@ window.eliminarjuego = (codigo) => {
     confirmButtonText: "Borrar",
     cancelButtonText: "Cancelar",
   }).then((result) => {
-    console.log(result);
     if (result.isConfirmed) {
       //aqui agrego mi codigo
       //borrar del array un objeto
@@ -250,7 +243,7 @@ window.prepararJuegoEditar = (codigoJuego) => {
   let juegoBuscado = listaVideojuegos.find(
     (juego) => juego.codigo === codigoJuego
   );
-  console.log(juegoBuscado);
+
   codigo.value = juegoBuscado.codigo;
   nombre.value = juegoBuscado.nombre;
   precio.value = juegoBuscado.precio;
@@ -258,7 +251,7 @@ window.prepararJuegoEditar = (codigoJuego) => {
   portadaform.value = juegoBuscado.imagen.portada;
   banerform.value = juegoBuscado.imagen.baner;
   galeria1form.value = juegoBuscado.imagen.galeria[0];
-  console.log(juegoBuscado.imagen.galeria[0]);
+
   galeria2form.value = juegoBuscado.imagen.galeria[1];
   galeria3form.value = juegoBuscado.imagen.galeria[2];
   galeria4form.value = juegoBuscado.imagen.galeria[3];
@@ -286,7 +279,7 @@ function editarVideoJuego() {
     positivas: reseñaspositivas.value,
     negativas: reseñasnegativas.value,
   };
-  console.log(reseñas);
+
   let imagen = {
     portada: portadaform.value,
     baner: banerform.value,
@@ -311,7 +304,7 @@ function editarVideoJuego() {
   let encontrarVideoJuego = listaVideojuegos.findIndex(
     (juego) => juego.codigo === codigo.value
   );
-  console.log(encontrarVideoJuego);
+
   listaVideojuegos[encontrarVideoJuego].codigo = codigo.value;
   listaVideojuegos[encontrarVideoJuego].nombre = nombre.value;
   listaVideojuegos[encontrarVideoJuego].precio = precio.value;

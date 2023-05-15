@@ -18,19 +18,24 @@ verificarUsuario();
 
 function login(e) {
   e.preventDefault();
-  const resumenErorres = sumarioValidaciones();
-  if (resumenErorres.length === 0) {
-    mostrarAlert(false, "");
-    localStorage.setItem("user", usuario.email);
-    verificarUsuario();
-    modalLogin.hide();
-    Swal.fire(
-      "Logueado correctamente",
-      "Bienvenido " + usuario.email,
-      "success"
-    );
+
+  if (btnLogin.innerText.toLocaleLowerCase() === "login") {
+    const resumenErorres = sumarioValidaciones();
+    if (resumenErorres.length === 0) {
+      mostrarAlert(false, "");
+      localStorage.setItem("user", usuario.email);
+      verificarUsuario();
+      modalLogin.hide();
+      Swal.fire(
+        "Logueado correctamente",
+        "Bienvenido " + usuario.email,
+        "success"
+      );
+    } else {
+      mostrarAlert(true, resumenErorres);
+    }
   } else {
-    mostrarAlert(true, resumenErorres);
+    modalLogin.hide();
   }
   formLogin.reset();
 }
@@ -81,10 +86,23 @@ function mostrarAlert(estado, resumeErrores) {
 }
 
 function logout() {
-  localStorage.removeItem("user");
-  btnLogin.innerHTML = "Login";
-  document.getElementById("admin").classList.add("d-none");
-  window.location.href = window.location.origin;
+  Swal.fire({
+    title: "Cerrar sesion?",
+    text: "Usted esta por cerrar sesion",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Cerrar Sesion",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("user");
+      btnLogin.innerHTML = "Login";
+      document.getElementById("admin").classList.add("d-none");
+      window.location.href = window.location.origin;
+    } else modalLogin.hide();
+  });
 }
 
 function verificarUsuario() {
