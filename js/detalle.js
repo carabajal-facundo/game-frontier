@@ -1,20 +1,16 @@
-
-
 const parametroCodigo = new URLSearchParams(window.location.search);
 
-const listaVideojuegos = JSON.parse(localStorage.getItem('listaVideojuegos')) || [];
+const listaVideojuegos =
+  JSON.parse(localStorage.getItem("listaVideojuegos")) || [];
 
-const videojuegoBuscado = listaVideojuegos.find((videojuego)=> videojuego.codigo === parametroCodigo.get('codigo'));
-console.log(videojuegoBuscado.nombre)
+const videojuegoBuscado = listaVideojuegos.find(
+  (videojuego) => videojuego.codigo === parametroCodigo.get("codigo")
+);
+console.log(videojuegoBuscado.nombre);
 
-const contenedor = document.getElementById('contenedorDetalle');
-
-
+const contenedor = document.getElementById("contenedorDetalle");
 
 // ${videojuegoBuscado.}
-
-
- 
 
 // contenedorImagen.style.backgroundImage = `url(${videojuegoBuscado.imagen})`;
 
@@ -226,37 +222,38 @@ contenedor.innerHTML = `
 
 </article>
 </section>
-`
-let contenedorGaleria = document.getElementById('galeria')
-function imprimirGaleria(){
-  let arrayGaleria = videojuegoBuscado.imagen.galeria
-   for(imagen of arrayGaleria){
-    if(imagen !== ""){
-    contenedorGaleria.innerHTML += `    
+`;
+let contenedorGaleria = document.getElementById("galeria");
+function imprimirGaleria() {
+  let arrayGaleria = videojuegoBuscado.imagen.galeria;
+  for (imagen of arrayGaleria) {
+    if (imagen !== "") {
+      contenedorGaleria.innerHTML += `    
     <aside class="col-lg-4 p-2">
     <img src="${imagen}" class="img-rounded p-2" alt="${videojuegoBuscado.nombre}" width="304" height="236">
     </aside>
-    `
-  }
+    `;
+    }
   }
 }
-let contenedorReseñas = document.getElementById('contenedorReseñas')
-function imprimirReseñas(){
-  let balanceReseñas = videojuegoBuscado.reseñas.positivas - videojuegoBuscado.reseñas.negativas;
-  if ( balanceReseñas >= 1 ){
-      contenedorReseñas.innerHTML= `
-      <i class="bi bi-hand-thumbs-up-fill text-success"></i><span class = 'text-success ms-2'>+${balanceReseñas}</span> <p class ='d-inline-block ms-2'>Recomendado</p>`
-  }else if(balanceReseñas < 0 ){
-    contenedorReseñas.innerHTML= `
-      <i class="bi bi-hand-thumbs-down-fill text-danger"></i><span class = 'text-danger ms-2'>${balanceReseñas}</span> <p class ='d-inline-block ms-2'>No recomendado</p>`
-  }else{
+let contenedorReseñas = document.getElementById("contenedorReseñas");
+function imprimirReseñas() {
+  let balanceReseñas =
+    videojuegoBuscado.reseñas.positivas - videojuegoBuscado.reseñas.negativas;
+  if (balanceReseñas >= 1) {
     contenedorReseñas.innerHTML = `
-    <i class="bi bi-emoji-neutral-fill text-warning"></i><span class = 'text-warning ms-2'>+${balanceReseñas} </span> Reseñas mixtas <p></p>`
+      <i class="bi bi-hand-thumbs-up-fill text-success"></i><span class = 'text-success ms-2'>+${balanceReseñas}</span> <p class ='d-inline-block ms-2'>Recomendado</p>`;
+  } else if (balanceReseñas < 0) {
+    contenedorReseñas.innerHTML = `
+      <i class="bi bi-hand-thumbs-down-fill text-danger"></i><span class = 'text-danger ms-2'>${balanceReseñas}</span> <p class ='d-inline-block ms-2'>No recomendado</p>`;
+  } else {
+    contenedorReseñas.innerHTML = `
+    <i class="bi bi-emoji-neutral-fill text-warning"></i><span class = 'text-warning ms-2'>+${balanceReseñas} </span> Reseñas mixtas <p></p>`;
   }
 }
 imprimirReseñas();
 imprimirGaleria();
-const contenedorImagen = document.getElementById('detallefondo')
+const contenedorImagen = document.getElementById("detallefondo");
 
-console.log(contenedorImagen)
+console.log(contenedorImagen);
 contenedorImagen.style.backgroundImage = `linear-gradient(0deg, #02192b 5%, transparent, #0c3f66),url("${videojuegoBuscado.imagen.baner}")`;
