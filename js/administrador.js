@@ -70,13 +70,13 @@ btnAgregarVideojuego.addEventListener("click", mostrarModalJuego);
 // obtengo la etiqueta<tbody>
 let tBody = document.querySelector("tbody");
 
-function mostrartabla(){
-for (let i = 0; i < listaVideojuegos.length; i++) {
-  insertarFila(listaVideojuegos[i], i + 1);
-}
+function mostrartabla() {
+  for (let i = 0; i < listaVideojuegos.length; i++) {
+    insertarFila(listaVideojuegos[i], i + 1);
+  }
 }
 
-mostrartabla()
+mostrartabla();
 
 function insertarFila(juego, indice) {
   tBody.innerHTML += `
@@ -203,42 +203,42 @@ function limpiarFormulario() {
   formularioVideojuego.reset();
 }
 
-
 window.eliminarjuego = (codigo) => {
-    Swal.fire({
-      title: "¿Esta seguro de eliminar la juego?",
-      text: "No puedes revertir posteriormente este paso",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Borrar",
-      cancelButtonText: "Cancelar",
-    }).then((result) => {
-      console.log(result);
-      if (result.isConfirmed) {
-        //aqui agrego mi codigo
-        //borrar del array un objeto
-        let posicionjuego = listaVideojuegos.findIndex(
-          (videojuego) => videojuego.codigo === codigo
-        );
-        listaVideojuegos.splice(posicionjuego, 1);
-        //actualizar el localstorage
-        guardarEnLocalstorage();
+  Swal.fire({
+    title: "¿Esta seguro de eliminar la juego?",
+    text: "No puedes revertir posteriormente este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    console.log(result);
+    if (result.isConfirmed) {
+      //aqui agrego mi codigo
+      //borrar del array un objeto
+      let posicionjuego = listaVideojuegos.findIndex(
+        (videojuego) => videojuego.codigo === codigo
+      );
+      listaVideojuegos.splice(posicionjuego, 1);
+      //actualizar el localstorage
+      guardarEnLocalstorage();
 
-        //borrar la fila de la tabla
-        let tablavideojuego = document.querySelector("tbody");
-        tablavideojuego.removeChild(tablavideojuego.children[posicionjuego]);
-        //todo agregar una funcion que actualice el primer td de cada fila con la cantidad de elementos del array
-        Swal.fire("Juego eliminado", "El juego seleccionado fue eliminado correctamente", "success");
-        tBody.innerHTML=""
-        mostrartabla();
-      }
-    });
-  };
-
-
-
+      //borrar la fila de la tabla
+      let tablavideojuego = document.querySelector("tbody");
+      tablavideojuego.removeChild(tablavideojuego.children[posicionjuego]);
+      //todo agregar una funcion que actualice el primer td de cada fila con la cantidad de elementos del array
+      Swal.fire(
+        "Juego eliminado",
+        "El juego seleccionado fue eliminado correctamente",
+        "success"
+      );
+      tBody.innerHTML = "";
+      mostrartabla();
+    }
+  });
+};
 
 function guardarEnLocalstorage() {
   localStorage.setItem("listaVideojuegos", JSON.stringify(listaVideojuegos));
@@ -327,14 +327,23 @@ function editarVideoJuego() {
   tBody.children[encontrarVideoJuego].children[1].innerHTML = nombre.value;
   tBody.children[encontrarVideoJuego].children[2].innerHTML = precio.value;
   tBody.children[encontrarVideoJuego].children[3].innerHTML = categoria.value;
-  tBody.children[encontrarVideoJuego].children[4].children[0].innerHTML = portadaform.value;
-  tBody.children[encontrarVideoJuego].children[5].children[0].innerHTML = descripcion.value;
-  tBody.children[encontrarVideoJuego].children[6].children[0].innerHTML = `SO:${requisitos.os} <br> Procesador: ${requisitos.processor} <br> RAM: ${requisitos.memory} <br> Grafica: ${requisitos.graphics} <br> DirectX: ${requisitos.directX} <br> Almacenamiento: ${requisitos.storage} <br> Adicionales: ${requisitos.additional} <br> `;
-  tBody.children[encontrarVideoJuego].children[7].innerHTML = desarrollador.value;
-  tBody.children[encontrarVideoJuego].children[8].innerHTML = distribuidor.value;
-  tBody.children[encontrarVideoJuego].children[9].innerHTML = fechaLanzamiento.value;
-  tBody.children[encontrarVideoJuego].children[10].innerHTML = reseñaspositivas.value;
-  tBody.children[encontrarVideoJuego].children[11].innerHTML = reseñasnegativas.value;
+  tBody.children[encontrarVideoJuego].children[4].children[0].innerHTML =
+    portadaform.value;
+  tBody.children[encontrarVideoJuego].children[5].children[0].innerHTML =
+    descripcion.value;
+  tBody.children[
+    encontrarVideoJuego
+  ].children[6].children[0].innerHTML = `SO:${requisitos.os} <br> Procesador: ${requisitos.processor} <br> RAM: ${requisitos.memory} <br> Grafica: ${requisitos.graphics} <br> DirectX: ${requisitos.directX} <br> Almacenamiento: ${requisitos.storage} <br> Adicionales: ${requisitos.additional} <br> `;
+  tBody.children[encontrarVideoJuego].children[7].innerHTML =
+    desarrollador.value;
+  tBody.children[encontrarVideoJuego].children[8].innerHTML =
+    distribuidor.value;
+  tBody.children[encontrarVideoJuego].children[9].innerHTML =
+    fechaLanzamiento.value;
+  tBody.children[encontrarVideoJuego].children[10].innerHTML =
+    reseñaspositivas.value;
+  tBody.children[encontrarVideoJuego].children[11].innerHTML =
+    reseñasnegativas.value;
   Swal.fire(
     "VideoJuego editado",
     "El VideoJuego fue modificado correctamente",

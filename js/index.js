@@ -25,9 +25,9 @@ console.log(listaVideojuegos);
 
 listaVideojuegos.map((juego) => crearArticleJuego(juego));
 
-function crearArticleJuego(juego){
-    let seccionJuegos = document.getElementById('seccionJuegos');
-    seccionJuegos.innerHTML+=`
+function crearArticleJuego(juego) {
+  let seccionJuegos = document.getElementById("seccionJuegos");
+  seccionJuegos.innerHTML += `
         <article class="col-md-4 col-lg-3 mt-5">
             <a href="./pages/detalle.html?codigo=${juego.codigo}" class="container-img">
                 <img src="${juego.imagen.portada}" alt="${juego.nombre}"
@@ -45,5 +45,6 @@ function crearArticleJuego(juego){
 }
 
 window.enviarCodigo = (codigo) => {
-    window.location.href = window.location.origin+'/pages/detalle.html?codigo='+codigo;
-}
+  window.location.href =
+    window.location.origin + "/pages/detalle.html?codigo=" + codigo;
+};
