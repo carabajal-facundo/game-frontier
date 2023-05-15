@@ -8,7 +8,6 @@ formulario.addEventListener("submit", (e) => {
   let inputbuscador = document.getElementById("buscador");
   let buscador = inputbuscador.value.toLowerCase();
 
-
   for (let i = 1; i < elementosjuegos.length; i += 2) {
     let article = elementosjuegos[i];
     let title = article.querySelector("h3").textContent.toLowerCase();

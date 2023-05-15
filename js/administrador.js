@@ -28,13 +28,11 @@ let nombre = document.getElementById("nombre"),
   reseñaspositivas = document.getElementById("reseñasPositivas"),
   reseñasnegativas = document.getElementById("reseñasNegativas");
 
-
 let modalVideojuego = new bootstrap.Modal(
   document.getElementById("adminModal")
 );
 let verificarCrearVideojuego = true; //  verificarCrearVideojuego = true entonces creo el Videojuego, cuando sea false tengo que editar el Videojuego
 const btnAgregarVideojuego = document.getElementById("btnAgregarVideojuego");
-
 
 let listaVideojuegos = localStorage.getItem("listaVideojuegos");
 // si listaVideojuegos esta vacio
@@ -58,8 +56,6 @@ if (!listaVideojuegos) {
       )
   );
 }
-
-
 
 // manejadores de eventos
 formularioVideojuego.addEventListener("submit", prepararFormulario);
@@ -212,7 +208,6 @@ window.eliminarjuego = (codigo) => {
     confirmButtonText: "Borrar",
     cancelButtonText: "Cancelar",
   }).then((result) => {
-
     if (result.isConfirmed) {
       //aqui agrego mi codigo
       //borrar del array un objeto

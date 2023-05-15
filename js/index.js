@@ -21,8 +21,6 @@ if (!listaVideojuegos) {
   );
 }
 
-
-
 listaVideojuegos.map((juego) => crearArticleJuego(juego));
 
 function crearArticleJuego(juego) {

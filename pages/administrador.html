@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="author"
-      content="Facundo Carabajal, Claudio David Copa, Alejandro sebastian	Orosco, Nahuel Federico	Rodriguez, Diego Mercado"
+      content="Facundo Carabajal, Alejandro sebastian	Orosco, Nahuel Federico	Rodriguez, Diego Mercado"
     />
     <meta
       name="keywords"
@@ -68,7 +68,7 @@
                 >
               </li>
               <li class="nav-item ms-lg-4">
-                <button class="h-100" data-bs-toggle="modal" data-bs-target="#loginModal" id='btnLogin'>
+                <button type="button" class="h-100" id="btnLogin">
                   <span class="fs-6">Login</span> &nbsp;<i
                     class="bi bi-box-arrow-left fw-"
                   ></i>
@@ -113,7 +113,6 @@
                 <th scope="col">Fecha de lanzamiento</th>
                 <th scope="col">Reseñas Positivas</th>
                 <th scope="col">Reseñas Negativas</th>
-
               </tr>
             </thead>
             <tbody></tbody>
@@ -169,7 +168,7 @@
                     </div>
                     <div class="col-12">
                       <label for="imagen">Imagenes</label>
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de portada"
@@ -178,7 +177,7 @@
                         maxlength="300"
                         minlength="3"
                       />
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de baner pagina detalle"
@@ -187,7 +186,7 @@
                         maxlength="300"
                         minlength="3"
                       />
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de galeria 1"
@@ -196,7 +195,7 @@
                         maxlength="300"
                         minlength="3"
                       />
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de galeria 2"
@@ -205,7 +204,7 @@
                         maxlength="300"
                         minlength="3"
                       />
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de galeria 3"
@@ -214,7 +213,7 @@
                         maxlength="300"
                         minlength="3"
                       />
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de galeria 4"
@@ -223,7 +222,7 @@
                         maxlength="300"
                         minlength="3"
                       />
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de galeria 5"
@@ -232,7 +231,7 @@
                         maxlength="300"
                         minlength="3"
                       />
-                                            <input
+                      <input
                         type="text"
                         class="form-control"
                         placeholder="Imagen de galeria 6"
@@ -242,8 +241,7 @@
                         minlength="3"
                       />
                     </div>
-                      
-                    </div>
+
                     <div class="col-12">
                       <label for="precio">Precio</label>
                       <input
@@ -327,7 +325,7 @@
                         minlength="5"
                         maxlength="1000"
                       />
-                    
+
                       <input
                         id="directx"
                         type="text"
@@ -356,7 +354,6 @@
                         maxlength="1000"
                       />
                     </div>
-                    
 
                     <div class="col-12">
                       <label for="desarrollador">Desarrollador</label>
@@ -407,19 +404,17 @@
                         placeholder="Numero de reseñas negativas"
                         id="reseñasNegativas"
                         min="0"
-
                       />
                     </div>
                   </div>
-                    <div
-                      class="alert alert-danger d-none"
-                      role="alert"
-                      id="alertMsjError"
-                    ></div>
-                    <button type="submit" class="btn btn-success mt-4">
-                      Enviar
-                    </button>
-                  </div>
+                  <div
+                    class="alert alert-danger d-none"
+                    role="alert"
+                    id="alertMsjError"
+                  ></div>
+                  <button type="submit" class="btn btn-success mt-4">
+                    Enviar
+                  </button>
                 </form>
               </div>
             </div>
@@ -429,34 +424,66 @@
         <!-- fin de ventana Modal -->
       </section>
       <!-- Modal Login -->
-    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="modalLoginLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content bg-dark text-light">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="modalLoginLabel">Login</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="form-login">
-            <div class="col-12 text-start mb-2">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" aria-label="email" id="email" />
+      <div
+        class="modal fade"
+        id="loginModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalLoginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalLoginLabel">Login</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-            <div class="col-12 text-start">
-              <label for="contrasenia" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" aria-label="contrasenia" id="contrasenia" min="8" max="16" />
+            <div class="modal-body">
+              <form id="form-login">
+                <div class="col-12 text-start mb-2">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    aria-label="email"
+                    id="email"
+                  />
+                </div>
+                <div class="col-12 text-start">
+                  <label for="contrasenia" class="form-label">Contraseña</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    aria-label="contrasenia"
+                    id="contrasenia"
+                    min="8"
+                    max="16"
+                  />
+                </div>
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="botonCerrar"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+                <div id="alertMsj"></div>
+              </form>
             </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Login</button>
-          <button type="button" class="btn btn-danger" id="botonCerrar" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-        <div id="alertMsj"></div>
-      </form>
       </div>
-    </div>
-  </div>
     </main>
     <footer class="mt-5">
       <section class="bg-black pt-4">

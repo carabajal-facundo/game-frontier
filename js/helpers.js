@@ -1,24 +1,19 @@
 function validarCantidadCaracteres(texto, min, max) {
   if (texto.length >= min && texto.length <= max) {
-
     return true;
   } else {
-
     return false;
   }
 }
 
-// https://pics.filmaffinity.com/vaya_vacaciones-957309987-large.jpg
+
 
 function validarURLImagenes(texto) {
   const patron = /\.(jpe?g|png|gif)$/i;
 
-
   if (patron.test(texto)) {
-
     return true;
   } else {
-
     return false;
   }
 }
