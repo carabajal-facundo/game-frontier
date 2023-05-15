@@ -1,10 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+/* inicio css index */
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.text-titulo-juego{
+    color: #ff4d4dce;
+    transition: color 300ms;
 }
+
+.text-titulo-juego:hover{
+    color: #fff;
+}
+.img-portada{
+    width: 261px;
+    height: 406px;
+    border-radius: 15px;
+}
+
+/* fin css index */
+
 main {
   flex-grow: 1;
 }
@@ -19,9 +31,17 @@ body {
     rgba(118, 20, 28, 1) 0%,
     rgba(17, 17, 17, 1) 100%
   );
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-nav { 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav {
+
   font-size: 1.3rem;
 }
 nav img {
@@ -63,8 +83,87 @@ nav .nav-item, #logout-button {
 #logout-button:hover{
   color: white;
 }
+.portadaDetalles{
+  width: 20rem;
+}
+.truncarTexto{
+  max-width: 150px;
+  max-height: 150px;
+  overflow-x: auto;
+  
+}
+.facundo{
+  object-fit: cover;
+}
+
+#detallefondo {    
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  
+}
+
+
+.card {
+width: 70%;
+backdrop-filter: blur(1rem);
+box-shadow: 1.3rem 1.3rem 1.3 rgb(0, 0, 0);
+
+}
+
+.cb1 {
+background-color: rgba(225, 225, 225, 0)
+}
+
+
+.stock {
+background: rgb(223,223,223); background: linear-gradient(90deg, rgba(223,223,223,0.15449929971988796) 0%, rgba(223,223,223,0.227328431372549) 49%, rgba(223,223,223,0.196516106442577) 100%);
+padding: 1em 0 1em 0;
+border-radius: 5%;
+}
+
+.img-nosotros{
+  border-radius: 50%;
+}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #a70616 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #3b0808 ;   
+    
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #970110;
+    border-radius: 5px;
+    border: 3px solid #c70b0b;
+  }
+@media all and (min-width:992px){
+  .img-portada{
+      width: 261px;
+      height: 406px;
+  }
+}
 
 @media screen and (max-width: 767px) {
+  .img-portada{
+    width: 156px;
+    height: 234px;
+  }
+
+
+}
+@media screen and (max-width: 991px) {
   nav .nav-item, #logout-button {
     border: 2px solid rgb(0, 0, 0);
     transform: none;
@@ -73,14 +172,116 @@ nav .nav-item, #logout-button {
     background-color: #380505;
     float: none;    
     box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 1);
-    text-transform: uppercase;
-  
+    text-transform: uppercase;  
+    text-align: center;
     font-weight: 400;
     transition: all 0.2s linear;
   }
+
   #logout-button{    
     margin-right: 0;
     border:none;
     box-shadow: none;
   }
+}
+
+
+
+@media all and (min-width:992px){
+  .img-portada{
+      width: 261px;
+      height: 406px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .img-portada{
+    width: 156px;
+    height: 234px;
+  }
+
+
+}
+
+@media screen and (max-width: 991px) {
+  nav .nav-item, #logout-button {
+    border: 2px solid rgb(0, 0, 0);
+    transform: none;
+    -webkit-transform: 0;
+    -moz-transform: 0;
+    background-color: #380505;
+    float: none;    
+    box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 1);
+    text-transform: uppercase;  
+    text-align: center;
+    font-weight: 400;
+    transition: all 0.2s linear;
+  }
+
+  #logout-button{    
+    margin-right: 0;
+    border:none;
+    box-shadow: none;
+  }
+}
+
+
+@media screen and (min-width: 1050px){
+  .img-nosotros{
+    width: 45%;
+  }
+}
+
+
+h1, a{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.box{
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.box .error{
+  font-size: 150px;
+  color: #e60d05;
+  text-shadow: 
+    1px 1px 1px #020100,    
+    2px 2px 1px #020100,
+    3px 3px 1px #020100,
+    4px 4px 1px #020100,
+    5px 5px 1px #020100,
+    6px 6px 1px #020100,
+    7px 7px 1px #020100,
+    8px 8px 1px #020100,
+    25px 25px 8px rgba(0,0,0, 0.2);
+    
+}
+
+.pagina{
+  margin: 2rem 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fefffd;
+  text-align: center;
+}
+
+.inicio{
+  display: inline-block;
+  border: 4px solid #080000;
+  color: #f3eeee;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.75rem 1rem 0.6rem;
+  transition: all 0.2s linear;
+  box-shadow: 0 3px 8px rgba(165, 5, 5, 0.3);
+  
+}
+.inicio:hover{
+  background: #222;
+  color: #ddd;
+  
 }
