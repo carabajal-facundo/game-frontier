@@ -65,7 +65,7 @@
                   >Sobre nosotros</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item d-none" id="admin">
                 <a class="nav-link active" 
                 aria-current="page"
                 href="./administrador.html"
@@ -73,7 +73,7 @@
                 >
               </li>
               <li class="nav-item ms-lg-4">
-                <button class="h-100 "id='logout-button'><span class="fs-6">Cerrar Sesion</span> &nbsp;<i class="bi bi-box-arrow-left fw-"></i></button>
+                <button class="h-100 "id='btnLogin'><span class="fs-6">Login</span> &nbsp;<i class="bi bi-box-arrow-left fw-"></i></button>
               </li>
 
             </ul>
@@ -84,6 +84,35 @@
     <main class="text-light">            
       <section id="contenedorDetalle">
       </section>
+      <!-- Modal Login -->
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalLoginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalLoginLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-login">
+            <div class="col-12 text-start mb-2">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" aria-label="email" id="email" />
+            </div>
+            <div class="col-12 text-start">
+              <label for="contrasenia" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" aria-label="contrasenia" id="contrasenia" min="8" max="16" />
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-danger" id="botonCerrar" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+        <div id="alertMsj"></div>
+      </form>
+      </div>
+    </div>
+  </div>
     </main>
     <footer class="mt-5">
       <section class="bg-black pt-4">
@@ -126,7 +155,7 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-        
+    <script src="../js/login.js"></script>
     <script src="../js/detalle.js"></script>
   </body>
 </html>

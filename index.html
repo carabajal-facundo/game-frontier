@@ -36,12 +36,12 @@
             <li class="nav-item">
               <a class="nav-link" href="./pages/nosotros.html">Sobre nosotros</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none"  id="admin" >
               <a class="nav-link" href="./pages/administrador.html">Administrador</a>
             </li>
             <li class="nav-item ms-lg-4">
               <button data-bs-toggle="modal" data-bs-target="#loginModal" class="h-100 " id='btnLogin'><span
-                  class="fs-6">Cerrar Sesion</span> &nbsp;<i class="bi bi-box-arrow-left fw-"></i></button>
+                  class="fs-6">Login</span> &nbsp;<i class="bi bi-box-arrow-left fw-"></i></button>
             </li>
           </ul>
         </div>
@@ -70,7 +70,7 @@
     <section class="row" id="seccionJuegos">
 
     </section>
-    <!-- Modal -->
+    <!-- Modal Login -->
     <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="modalLoginLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -86,13 +86,13 @@
                 <input type="email" class="form-control" aria-label="email" id="email" />
               </div>
               <div class="col-12 text-start">
-                <label for="constraseña" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" aria-label="constraseña" id="contrasenia" />
+                <label for="contrasenia" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" aria-label="contrasenia" id="contrasenia" min="8" max="16" />
               </div>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Login</button>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-danger" id="botonCerrar" data-bs-dismiss="modal">Cerrar</button>
           </div>
           <div id="alertMsj"></div>
         </form>
@@ -127,7 +127,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
-  <!-- <script src="./js/index.js" type="module"></script> -->
+  <script src="./js/index.js" type="module"></script>
   <script src="./js/buscador.js"></script>
   <script src="./js/login.js" type="module"></script>
 </body>

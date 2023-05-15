@@ -59,7 +59,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="./nosotros.html">Sobre nosotros</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item d-none" id="admin">
                 <a
                   class="nav-link active"
                   aria-current="page"
@@ -68,8 +68,8 @@
                 >
               </li>
               <li class="nav-item ms-lg-4">
-                <button class="h-100" id="logout-button">
-                  <span class="fs-6">Cerrar Sesion</span> &nbsp;<i
+                <button class="h-100" data-bs-toggle="modal" data-bs-target="#loginModal" id='btnLogin'>
+                  <span class="fs-6">Login</span> &nbsp;<i
                     class="bi bi-box-arrow-left fw-"
                   ></i>
                 </button>
@@ -428,6 +428,35 @@
 
         <!-- fin de ventana Modal -->
       </section>
+      <!-- Modal Login -->
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalLoginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalLoginLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-login">
+            <div class="col-12 text-start mb-2">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" aria-label="email" id="email" />
+            </div>
+            <div class="col-12 text-start">
+              <label for="contrasenia" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" aria-label="contrasenia" id="contrasenia" min="8" max="16" />
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-danger" id="botonCerrar" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+        <div id="alertMsj"></div>
+      </form>
+      </div>
+    </div>
+  </div>
     </main>
     <footer class="mt-5">
       <section class="bg-black pt-4">
@@ -477,5 +506,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
     <script src="../js/administrador.js" type="module"></script>
+    <script src="../js/login.js"></script>
   </body>
 </html>
