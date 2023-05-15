@@ -6,7 +6,7 @@ const listaVideojuegos =
 const videojuegoBuscado = listaVideojuegos.find(
   (videojuego) => videojuego.codigo === parametroCodigo.get("codigo")
 );
-console.log(videojuegoBuscado.nombre);
+
 
 const contenedor = document.getElementById("contenedorDetalle");
 
@@ -255,5 +255,5 @@ imprimirReseñas();
 imprimirGaleria();
 const contenedorImagen = document.getElementById("detallefondo");
 
-console.log(contenedorImagen);
+
 contenedorImagen.style.backgroundImage = `linear-gradient(0deg, #02192b 5%, transparent, #0c3f66),url("${videojuegoBuscado.imagen.baner}")`;

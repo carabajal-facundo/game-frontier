@@ -1,9 +1,9 @@
 function validarCantidadCaracteres(texto, min, max) {
   if (texto.length >= min && texto.length <= max) {
-    console.log("aqui el texto tiene la cant. de caracteres correcto");
+
     return true;
   } else {
-    console.log("aqui el texto no cumple la validacion");
+
     return false;
   }
 }
@@ -13,12 +13,12 @@ function validarCantidadCaracteres(texto, min, max) {
 function validarURLImagenes(texto) {
   const patron = /\.(jpe?g|png|gif)$/i;
 
-  console.log(typeof patron);
+
   if (patron.test(texto)) {
-    console.log("la expresion regular fue valida");
+
     return true;
   } else {
-    console.log("no cumplio con la expresion regular");
+
     return false;
   }
 }

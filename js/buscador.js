@@ -7,7 +7,7 @@ formulario.addEventListener("submit", (e) => {
   let elementosjuegos = input.childNodes;
   let inputbuscador = document.getElementById("buscador");
   let buscador = inputbuscador.value.toLowerCase();
-  console.log(buscador);
+
 
   for (let i = 1; i < elementosjuegos.length; i += 2) {
     let article = elementosjuegos[i];
