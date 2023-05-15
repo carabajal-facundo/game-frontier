@@ -22,9 +22,14 @@ contrasenia = document.getElementById("contrasenia"),
         const resumenErorres = sumarioValidaciones()
         if(resumenErorres.length === 0){
             mostrarAlert(false,"")
-            modalLogin.hide()
             localStorage.setItem("user",usuario.email)
             verificarUsuario()
+            modalLogin.hide()
+            Swal.fire(
+                "Logueado correctamente",
+                "Bienvenido " + usuario.email,
+                "success"
+              );
             
         }else{
             mostrarAlert(true,resumenErorres)
