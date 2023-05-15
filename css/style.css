@@ -20,7 +20,9 @@
 main {
   flex-grow: 1;
 }
-
+footer{
+  color: rgb(201, 194, 194);
+}
 body {
   display: flex;
   font-family: "Play", sans-serif;
@@ -148,9 +150,7 @@ nav .nav-item,
   border: 3px solid #c70b0b;
 }
 
-footer {
-  color: white;
-}
+
 
 @media all and (min-width: 992px) {
   .img-portada {
