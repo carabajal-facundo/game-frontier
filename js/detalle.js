@@ -75,7 +75,7 @@ contenedor.innerHTML = `
       </div>
       <div class="d-flex justify-content-center">
         <button class="btn btn-secondary col-md-3 m-2" type="button"><i class="bi bi-cart-check"></i></button>
-        <button class="btn btn-secondary col-md-6 m-2" type="button">Compra Ahora</button>
+        <a href = './error404.html' class="btn btn-secondary col-md-6 m-2" type="button">Compra Ahora</a>
         
       </div>  
     </aside>
