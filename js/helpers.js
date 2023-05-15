@@ -84,3 +84,38 @@ export function sumarioValidaciones(
 
   return resumen;
 }
+
+ function validarPassword(contrasenia) {
+  const expresionRegular =
+    /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
+  if (expresionRegular.test(contrasenia)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validarEmail(email) {
+  const expresion =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if (expresion.test(email)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function sumarioValidacionesLogin(email,contrasenia,usuario) {
+  let resumen = "";
+  if (email !== usuario.email || contrasenia !== usuario.password) {
+    resumen += "Email o contraseña ingresados son incorrectos <br/>";
+  }
+  if (!validarPassword(contrasenia)) {
+    resumen +=
+      "La contraseña debe contener 1 letra mayuscula, una minuscula, un numero, un caracter especial y como minimo 8 digitos. <br/>";
+  }
+  if (!validarEmail(email)) {
+    resumen += "El email ingresado no es valido.<br/> ";
+  }
+  return resumen;
+}

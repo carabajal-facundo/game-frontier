@@ -1,3 +1,5 @@
+import { sumarioValidacionesLogin } from "./helpers.js";
+
 const email = document.getElementById("email"),
   contrasenia = document.getElementById("contrasenia"),
   formLogin = document.getElementById("form-login"),
@@ -20,7 +22,7 @@ function login(e) {
   e.preventDefault();
 
   if (btnLogin.innerText.toLocaleLowerCase() === "login") {
-    const resumenErorres = sumarioValidaciones();
+    const resumenErorres = sumarioValidacionesLogin(email.value,contrasenia.value,usuario);
     if (resumenErorres.length === 0) {
       mostrarAlert(false, "");
       localStorage.setItem("user", usuario.email);
@@ -37,42 +39,6 @@ function login(e) {
   } else {
     modalLogin.hide();
   }
-  formLogin.reset();
-}
-
-function validarPassword() {
-  const expresionRegular =
-    /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
-  if (expresionRegular.test(contrasenia.value)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function validarEmail() {
-  const expresion =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  if (expresion.test(email.value)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function sumarioValidaciones() {
-  let resumen = "";
-  if (email.value !== usuario.email || contrasenia.value !== usuario.password) {
-    resumen = "Email o contraseña ingresados son incorrectos <br/>";
-  }
-  if (!validarPassword()) {
-    resumen +=
-      "La contraseña debe contener 1 letra mayuscula, una minuscula, un numero, un caracter especial y como minimo 8 digitos. <br/>";
-  }
-  if (!validarEmail()) {
-    resumen += "El email ingresado no es valido.<br/> ";
-  }
-  return resumen;
 }
 
 function mostrarAlert(estado, resumeErrores) {
@@ -133,4 +99,5 @@ function mostrarModal() {
 
 function limpiarFormulario() {
   formLogin.reset();
+  mostrarAlert(false,"")
 }
