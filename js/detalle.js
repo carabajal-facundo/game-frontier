@@ -28,15 +28,15 @@ contenedor.innerHTML = `
           <h1 class="text-center text-white"> ${videojuegoBuscado.nombre}</h1>
           <div class="container text-center mb-4 stock">
             <div class="row">
-              <div class="col-sm-1 col-md-3 col-lg-4">
+              <div class="col-sm-12 col-lg-4">
                 <img src="../img/origins.png" alt="" class="w-25">
                 Origin
               </div>
-              <div class="col-sm-1 col-md-3 col-lg-4">
+              <div class="col-sm-12 col-lg-4">
                 <i class="bi bi-check-lg text-success"></i>
                 En Stock
               </div>
-              <div class="col-sm-1 col-md-3 col-lg-4">
+              <div class="col-sm-12 col-lg-4">
                 <i class="bi bi-check-lg text-success"></i>
                 Original
               </div>
@@ -44,7 +44,7 @@ contenedor.innerHTML = `
           </div>
 
           <article class="row">
-          <div class="col-md-6 d-flex justify-content-center ">
+          <div class="col-lg-6 d-flex justify-content-center ">
           <div class="dropdown w-100">
             <a class="btn btn-secondary dropdown-toggle  w-100" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               PC
@@ -56,7 +56,7 @@ contenedor.innerHTML = `
           </div>
         </div>
 
-        <div class="col-md-6 d-flex justify-content-center ">
+        <div class="col-lg-6 d-flex justify-content-center ">
           <div class="dropdown  w-100">
             <a class="btn btn-secondary dropdown-toggle w-100" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Standar Edición
