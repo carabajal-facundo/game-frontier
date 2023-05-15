@@ -30,15 +30,14 @@ Este proyecto fue creado por un equipo de estudiantes de Rolling Code como parte
 
 ## Autores
 1. [Facundo Carabajal](https://github.com/carabajal-facundo/)
-2. [David Copa]()
-3. [Sebastian Orosco](https://github.com/SebasAle95)
-4. [Diego Mercado](https://github.com/Diego2997)
-5. [Nahuel Rodriguez](https://github.com/NahuFed)
+2. [Sebastian Orosco](https://github.com/SebasAle95)
+3. [Diego Mercado](https://github.com/Diego2997)
+4. [Nahuel Rodriguez](https://github.com/NahuFed)
 
-## Netlify
+## Github Pages
+[https://carabajal-facundo.github.io/game-frontier/]
 
 
-## Contacto
-Si tienes alguna pregunta o sugerencia, por favor envíanos un correo electrónico a 
+
 
 
