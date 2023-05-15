@@ -127,6 +127,7 @@ function crearVideojuego() {
       galeria6form.value,
     ],
   };
+
   let requisitos = {
     os: osform.value,
     processor: `${processorform.value}`,
@@ -139,8 +140,9 @@ function crearVideojuego() {
   //validar el formulario
   let resumeErrores = sumarioValidaciones(
     nombre.value,
-    descripcion.value,
     portadaform.value,
+    banerform.value,
+    imagen.galeria,
     categoria.value
   );
 
