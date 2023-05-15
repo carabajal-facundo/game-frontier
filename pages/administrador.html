@@ -142,6 +142,7 @@
               </div>
               <div class="modal-body">
                 <form id="formVideojuego">
+                  <p> ( <span class="text-danger">*</span> ) Obligatorio</p>
                   <div class="row g-3">
                     <div class="col-12">
                       <label for="codigo">Codigo</label>
@@ -154,7 +155,7 @@
                       />
                     </div>
                     <div class="col-12">
-                      <label for="nombre">Titulo</label>
+                      <label for="nombre">Titulo <span class="text-danger">*</span></label>
                       <input
                         type="text"
                         class="form-control"
@@ -167,7 +168,7 @@
                       />
                     </div>
                     <div class="col-12">
-                      <label for="imagen">Imagenes</label>
+                      <label for="portada">Imagen de portada <span class="text-danger">*</span></label>
                       <input
                         type="text"
                         class="form-control"
@@ -177,6 +178,7 @@
                         maxlength="300"
                         minlength="3"
                       />
+                      <label for="baner">Imagen de baner</label>
                       <input
                         type="text"
                         class="form-control"
@@ -186,6 +188,7 @@
                         maxlength="300"
                         minlength="3"
                       />
+                      <label for="galeria1">Imagenes de galeria</label>
                       <input
                         type="text"
                         class="form-control"
@@ -258,7 +261,7 @@
                     <div class="col-12"></div>
                     <div class="col-12">
                       <label for="categoria" class="form-label"
-                        >Categoria</label
+                        >Categoria <span class="text-danger">*</span></label
                       >
                       <select
                         class="form-select"
