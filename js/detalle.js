@@ -56,7 +56,7 @@ contenedor.innerHTML = `
               <i class="bi bi-check-lg fs-1  text-success "></i>
               </aside>
               <aside class ='col-lg-12 col-4  d-flex justify-content-center'>
-              <p class = 'd-block align-self-end'>Original &nbsp</p>
+              <p class = 'd-block align-self-end'>Original </p>
               </aside>
               </div>
               </div>
