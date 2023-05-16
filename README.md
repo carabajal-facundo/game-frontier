@@ -34,8 +34,8 @@ Este proyecto fue creado por un equipo de estudiantes de Rolling Code como parte
 3. [Diego Mercado](https://github.com/Diego2997)
 4. [Nahuel Rodriguez](https://github.com/NahuFed)
 
-## Github Pages
-[https://carabajal-facundo.github.io/game-frontier/]
+## Netlify
+https://game-frontier.netlify.app/
 
 
 
