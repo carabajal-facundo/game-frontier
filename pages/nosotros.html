@@ -1,25 +1,29 @@
-<!DOCTYPE html >
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="author"
-      content="Facundo Carabajal, Claudio David Copa, Alejandro sebastian	Orosco, Nahuel Federico	Rodriguez, Diego Mercado"
+      content="Facundo Carabajal, Alejandro sebastian	Orosco, Nahuel Federico	Rodriguez, Diego Mercado"
     />
     <meta
       name="keywords"
       content="tienda, ecommerce, gaming, Ecommerce gamer"
     />
     <meta name="description" content="Ecommerce gamer" />
+    <link rel="icon" href="../img/favicon.ico">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <title>Game Frontier</title>
   </head>
@@ -51,77 +55,245 @@
               class="navbar-nav ms-auto mb-2 mb-lg-0 text-center text-md-start"
             >
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  
-                  href="../index.html"
-                  >Inicio</a
-                >
+                <a class="nav-link" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" 
-                aria-current="page"
-                href="./nosotros.html"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./nosotros.html"
                   >Sobre nosotros</a
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item d-none" id="admin">
                 <a class="nav-link" href="./administrador.html"
                   >Administrador</a
                 >
               </li>
               <li class="nav-item ms-lg-4">
-                <button class="h-100 "id='logout-button'><span class="fs-6">Cerrar Sesion</span> &nbsp;<i class="bi bi-box-arrow-left fw-"></i></button>
+                <button class="h-100" id="btnLogin">
+                  <span class="fs-6">Login</span> &nbsp;<i
+                    class="bi bi-box-arrow-left fw-"
+                  ></i>
+                </button>
               </li>
-
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    <main class="container text-light">      
-      
+    <main class="container text-light">
+      <section class="text-center py-3">
+        <h1>Sobre Nosotros</h1>
+        <p class="ps-4 pe-4">
+          " Con el fin de ofrecer una experiencia de compra excepcional a los
+          apasionados de los videojuegos, nos hemos preparado a fondo en las
+          áreas de desarrollo, diseño y gaming. Nuestra amplia gama de
+          habilidades y conocimientos nos permite estar listos para crear la
+          mejor plataforma de ecommerce gamer, donde los jugadores pueden
+          encontrar todo lo que necesitan para disfrutar al máximo de su
+          pasión."
+        </p>
+      </section>
+
+      <section class="container">
+        <article class="row">
+          <aside class="col-md-6 col-lg-6 col-6">
+            <img
+              src="../img/facundo.jpeg"
+              alt="facundo"
+              width="70%"
+              class="mt-5 mt-md-0 ms-3 mt-lg-0 mb-md-3 mb-lg-3 img-nosotros facundo"
+            />
+          </aside>
+          <aside class="col-md-6 col-lg-6 my-4 col-4 mt-lg-5">
+            <h4>Facundo Carabajal</h4>
+            <h5>Desarrollador</h5>
+            <p>Compositor musical, Pixel art, Estudiante de programacion</p>
+            <p>20 años</p>
+            <a href="https://github.com/carabajal-facundo/"
+              ><i class="bi bi-github fs-2 me-4"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-linkedin fs-2"></i
+            ></a>
+          </aside>
+          <hr />
+          <aside class="col-md-6 col-lg-6 col-6">
+            <img
+              src="../img/sebastian.jpeg"
+              alt="Alejandro"
+              width="70%"
+              class="mt-5 mt-md-0 ms-3 mt-lg-0 mb-md-3 mb-lg-3 img-nosotros"
+            />
+          </aside>
+          <aside class="col-md-6 col-lg-6 my-4 col-4 mt-lg-5">
+            <h4>Alejandro S. Orosco</h4>
+            <h5>Desarrollador</h5>
+            <p>
+              Fisico culturista, Preparador de atletas, Estudiante de
+              programacion
+            </p>
+            <p>26 años</p>
+            <a href="https://github.com/SebasAle95"
+              ><i class="bi bi-github fs-2 me-4"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-linkedin fs-2"></i
+            ></a>
+          </aside>
+          <hr />
+          <aside class="col-md-6 col-lg-6 col-6">
+            <img
+              src="../img/diego.jpg"
+              alt="Diego"
+              width="70%"
+              class="mt-5 mt-md-0 ms-3 mt-lg-0 mb-md-3 mb-lg-3 img-nosotros"
+            />
+          </aside>
+          <aside class="col-md-6 col-lg-6 my-4 col-4 mt-lg-5">
+            <h4>Diego Mercado</h4>
+            <h5>Desarrollador</h5>
+            <p>Prof. Ed. Fisica, Estudiante de programacion</p>
+            <p>25 años</p>
+            <a href="https://github.com/Diego2997"
+              ><i class="bi bi-github fs-2 me-4"></i
+            ></a>
+            <a href="/pages/error404.html"
+              ><i class="bi bi-linkedin fs-2"></i
+            ></a>
+          </aside>
+          <hr />
+          <aside class="col-md-6 col-lg-6 col-6">
+            <img
+              src="../img/nahuel.png"
+              alt="Nahuel"
+              width="70%"
+              class="mt-5 mt-md-0 ms-3 mt-lg-0 mb-md-3 mb-lg-3 img-nosotros"
+            />
+          </aside>
+          <aside class="col-md-6 col-lg-6 my-4 col-4 mt-lg-5">
+            <h4>Nahuel Rodriguez</h4>
+            <h5>Desarrollador</h5>
+            <p>Estudiante de programacion</p>
+            <p>27 años</p>
+            <a href="https://github.com/NahuFed"
+              ><i class="bi bi-github fs-2 me-4"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/rodrigueznahuelfederico/"
+              ><i class="bi bi-linkedin fs-2"></i
+            ></a>
+          </aside>
+          <hr />
+        </article>
+      </section>
+      <!-- Modal Login -->
+      <div
+        class="modal fade"
+        id="loginModal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalLoginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalLoginLabel">Login</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="form-login">
+                <div class="col-12 text-start mb-2">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    aria-label="email"
+                    id="email"
+                  />
+                </div>
+                <div class="col-12 text-start">
+                  <label for="contrasenia" class="form-label">Contraseña</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    aria-label="contrasenia"
+                    id="contrasenia"
+                    min="8"
+                    max="16"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="botonCerrar"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+                <div id="alertMsj"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="mt-5">
       <section class="bg-black pt-4">
-        <article class="container text-secondary">
+        <article class="container ">
           <article class="row">
             <aside class="col-md-4 text-center">
               <a
                 href="../index.html"
-                class="d-flex flex-row align-items-center justify-content-center text-decoration-none text-secondary"
+                class="d-flex flex-row align-items-center justify-content-center text-decoration-none "
               >
-                <img src="../img/logo-Game-Frontier-redondo-removebg-preview.png" alt="logo" width="50" class="me-1" />
+                <img
+                  src="../img/logo-Game-Frontier-redondo-removebg-preview.png"
+                  alt="logo"
+                  width="50"
+                  class="me-1"
+                />
                 <h3>Game Frontier</h3>
               </a>
             </aside>
             <aside
               class="col-md-4 text-center d-flex flex-row align-items-center justify-content-center mt-2 mt-md-none"
-            >
-            </aside>
+            ></aside>
             <aside
               class="col-md-4 text-center d-flex flex-row align-items-center justify-content-center mt-2 mt-md-none"
             >
               <a
                 href="./nosotros.html"
-                class="text-decoration-none text-secondary text-center"
+                class="text-decoration-none  text-center"
                 >Sobre nosotros</a
               >
             </aside>
             <aside
               class="d-flex flex-row justify-content-center mt-2 mt-md-none"
             >
-              <p class="mx-2"> &copy Todos los derechos reservados</p>
+              <p class="mx-2">&copy Todos los derechos reservados</p>
               <i class="bi bi-c-circle"></i>
             </aside>
           </article>
         </article>
       </section>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/login.js" type="module"></script>
   </body>
 </html>
