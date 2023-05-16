@@ -25,7 +25,7 @@ listaVideojuegos.map((juego) => crearArticleJuego(juego));
 
 function crearArticleJuego(juego) {
   function precioJuego() {
-    if (juego.precio === "" || juego.precio === 0) {
+    if (juego.precio === "" || juego.precio === '0') {
       return "Gratis";
     } else return `$${juego.precio}`;
   }
