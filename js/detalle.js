@@ -30,11 +30,11 @@ contenedor.innerHTML = `
             <div class="row justify-content-center align-items-end">
               <div class="col-sm-12 col-lg-4">
                <div class = 'row g-0'>
-               <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+               <aside class ='col-lg-12 col-4 d-flex justify-content-center '>
                <img src="../img/origins.png" alt="" class="w-50">
                </aside>
-               <aside class ='col-lg-12 col-9 '>
-               <p class = 'text-start text-lg-center ps-3 ps-lg-0 '>Origin</p>
+               <aside class ='col-lg-12 col-4 d-flex justify-content-center '>
+               <p class = 'd-block align-self-end h-50'>Origin</p>
                </aside>
                </div>
               </div>
@@ -42,21 +42,21 @@ contenedor.innerHTML = `
 
               <div class="col-sm-12 col-lg-4">
               <div class="row g-0">
-              <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+              <aside class ='col-lg-12 col-4 d-flex justify-content-center'>
               <i class="bi bi-check-lg fs-1  text-success"></i>
               </aside>
-              <aside class ='col-lg-12 col-9 '>
-              <p class = 'text-start text-lg-center ps-3 ps-lg-0'>En&nbspStock</p>
+              <aside class ='col-lg-12 col-4  d-flex justify-content-center '>
+              <p class = 'd-block align-self-end'>En&nbspStock</p>
               </aside>
               </div>
               </div>
               <div class="col-sm-12 col-lg-4 ">
               <div class="row g-0">
-              <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+              <aside class ='col-lg-12 col-4 d-flex justify-content-center'>
               <i class="bi bi-check-lg fs-1  text-success "></i>
               </aside>
-              <aside class ='col-lg-12 col-9 '>
-              <p class = 'text-start text-lg-center ps-3 ps-lg-0'>Original &nbsp</p>
+              <aside class ='col-lg-12 col-4  d-flex justify-content-center'>
+              <p class = 'd-block align-self-end'>Original &nbsp</p>
               </aside>
               </div>
               </div>
