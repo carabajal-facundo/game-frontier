@@ -27,18 +27,38 @@ contenedor.innerHTML = `
         <div class="card-body ">
           <h1 class="text-center text-white"> ${videojuegoBuscado.nombre}</h1>
           <div class="container text-center mb-4 stock">
-            <div class="row">
+            <div class="row justify-content-center align-items-end">
               <div class="col-sm-12 col-lg-4">
-                <img src="../img/origins.png" alt="" class="w-25">
-                Origin
+               <div class = 'row g-0'>
+               <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+               <img src="../img/origins.png" alt="" class="w-50">
+               </aside>
+               <aside class ='col-lg-12 col-9 '>
+               <p class = 'text-start text-lg-center ps-3 ps-lg-0 '>Origin</p>
+               </aside>
+               </div>
               </div>
+
+
               <div class="col-sm-12 col-lg-4">
-                <i class="bi bi-check-lg text-success"></i>
-                En Stock
+              <div class="row g-0">
+              <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+              <i class="bi bi-check-lg fs-1  text-success"></i>
+              </aside>
+              <aside class ='col-lg-12 col-9 '>
+              <p class = 'text-start text-lg-center ps-3 ps-lg-0'>En&nbspStock</p>
+              </aside>
               </div>
-              <div class="col-sm-12 col-lg-4">
-                <i class="bi bi-check-lg text-success"></i>
-                Original
+              </div>
+              <div class="col-sm-12 col-lg-4 ">
+              <div class="row g-0">
+              <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+              <i class="bi bi-check-lg fs-1  text-success "></i>
+              </aside>
+              <aside class ='col-lg-12 col-9 '>
+              <p class = 'text-start text-lg-center ps-3 ps-lg-0'>Original &nbsp</p>
+              </aside>
+              </div>
               </div>
             </div>
           </div>
