@@ -10,14 +10,14 @@ const videojuegoBuscado = listaVideojuegos.find(
 const contenedor = document.getElementById("contenedorDetalle");
 
 contenedor.innerHTML = `
-<section id="detallefondo">
-<h1 class="title text-center py-4"> ${videojuegoBuscado.nombre}
+<section id="detallefondo" class = 'container-fluid'>
+<h1 class="title text-center py-4"> ${videojuegoBuscado.nombre}</h1>
 
-  <article class="row w-100">
-    <aside class="col-md-6 d-flex justify-content-center">
+  <article class="row w-100 justify-content-center">
+    <aside class="col-md-6 d-flex justify-content-center text-center">
       <div class="card m-2 cb1 text-center">
         <div>
-          <img class="portadaDetalles" src="${videojuegoBuscado.imagen.portada}" alt="portada ${videojuegoBuscado.nombre}" >
+          <img class="portadaDetalles img-fluid" src="${videojuegoBuscado.imagen.portada}" alt="portada ${videojuegoBuscado.nombre}" >
         </div>
       </div>
     </aside>
@@ -232,8 +232,8 @@ contenedor.innerHTML = `
 
 
 <section class="container py-5">
-<h2 class="card-title text-white pb-5">Galeria</h2>
-<article class="row" id='galeria'>
+<h2 class="card-title text-white pb-5  text-center">Galeria</h2>
+<article class="row justify-content-center text-center" id='galeria'>
 
 </article>
 </section>
