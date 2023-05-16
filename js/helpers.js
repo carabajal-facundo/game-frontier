@@ -47,11 +47,6 @@ function validacioncategoria(categoria) {
     return false;
   }
 }
-function validarPrecio(precio) {
-  if (precio !== "") {
-    return true;
-  }
-}
 
 export function sumarioValidaciones(
   titulo,

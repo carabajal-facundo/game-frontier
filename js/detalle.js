@@ -27,24 +27,44 @@ contenedor.innerHTML = `
         <div class="card-body ">
           <h1 class="text-center text-white"> ${videojuegoBuscado.nombre}</h1>
           <div class="container text-center mb-4 stock">
-            <div class="row">
-              <div class="col-sm-1 col-md-3 col-lg-4">
-                <img src="../img/origins.png" alt="" class="w-25">
-                Origin
+            <div class="row justify-content-center align-items-end">
+              <div class="col-sm-12 col-lg-4">
+               <div class = 'row g-0'>
+               <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+               <img src="../img/origins.png" alt="" class="w-50">
+               </aside>
+               <aside class ='col-lg-12 col-9 '>
+               <p class = 'text-start text-lg-center ps-3 ps-lg-0 '>Origin</p>
+               </aside>
+               </div>
               </div>
-              <div class="col-sm-1 col-md-3 col-lg-4">
-                <i class="bi bi-check-lg text-success"></i>
-                En Stock
+
+
+              <div class="col-sm-12 col-lg-4">
+              <div class="row g-0">
+              <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+              <i class="bi bi-check-lg fs-1  text-success"></i>
+              </aside>
+              <aside class ='col-lg-12 col-9 '>
+              <p class = 'text-start text-lg-center ps-3 ps-lg-0'>En&nbspStock</p>
+              </aside>
               </div>
-              <div class="col-sm-1 col-md-3 col-lg-4">
-                <i class="bi bi-check-lg text-success"></i>
-                Original
+              </div>
+              <div class="col-sm-12 col-lg-4 ">
+              <div class="row g-0">
+              <aside class ='col-lg-12 col-3 text-end text-lg-center'>
+              <i class="bi bi-check-lg fs-1  text-success "></i>
+              </aside>
+              <aside class ='col-lg-12 col-9 '>
+              <p class = 'text-start text-lg-center ps-3 ps-lg-0'>Original &nbsp</p>
+              </aside>
+              </div>
               </div>
             </div>
           </div>
 
           <article class="row">
-          <div class="col-md-6 d-flex justify-content-center ">
+          <div class="col-lg-6 d-flex justify-content-center ">
           <div class="dropdown w-100">
             <a class="btn btn-secondary dropdown-toggle  w-100" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               PC
@@ -56,7 +76,7 @@ contenedor.innerHTML = `
           </div>
         </div>
 
-        <div class="col-md-6 d-flex justify-content-center ">
+        <div class="col-lg-6 d-flex justify-content-center ">
           <div class="dropdown  w-100">
             <a class="btn btn-secondary dropdown-toggle w-100" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Standar Edición
@@ -136,7 +156,7 @@ contenedor.innerHTML = `
 <section class="container">
 <h2 class="card-title text-white pb-5">Configuracion</h2>
 <article class="row">
-<aside class="col-md-6">
+<aside class="col-md-6 pb-4">
 <table class="table-responsive">
   <tbody>
     <tr>
